@@ -19,12 +19,20 @@
   <!-- // <script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> -->
   <script src="js/jquery.mobile.custom.min.js"></script>
 
+  <!-- jQuery.i18n -->
+  <script src="js/jquery.i18n/jquery.i18n.js"></script>
+  <script src="js/jquery.i18n/jquery.i18n.messagestore.js"></script>
+  <script src="js/jquery.i18n/jquery.i18n.fallbacks.js"></script>
+  <script src="js/jquery.i18n/jquery.i18n.parser.js"></script>
+  <script src="js/jquery.i18n/jquery.i18n.emitter.js"></script>
+  <script src="js/jquery.i18n/jquery.i18n.language.js"></script>
 
   <!-- // <script src="js/jquery.min.js"></script> -->
   <!-- // <script src="js/jquery.mobile-1.3.1.min.js"></script> -->
 
   <script src="js/utility.js"></script>
   <script src="js/player.js"></script>
+  <script src="js/languageswitcher.js"></script>
 
   <script type="text/javascript">
 
@@ -39,6 +47,11 @@
     is_paused = false;
 
     function onDeviceReady() {
+      languageSwitcher.loadMessages();
+      languageSwitcher.setLanguage('sk');
+      $("#home-page").i18n();
+
+
       var uzPulzoval = false;
 
         if(navigator.userAgent.match(/iP[ha][od].*OS 7/)) { //if ios7
@@ -186,8 +199,8 @@
    <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
 
    <div class="center-wrapper intro-screen">
-    <h1 class="intro-nadpis">Filko</h1>
-    <h2 class="intro-nadpis">SoundWalk</h2>
+    <h1 data-i18n="soundwalk-filko-title" class="intro-nadpis">Filko</h1>
+    <h2 data-i18n="soundwalk-filko-sub-title" class="intro-nadpis">SoundWalk</h2>
     <div id="menu-container">
       <div id="menu"  class="schovane">
         <a href="#exterier-list-page" class="menu-item grey" id="exterier" data-transition="slidedown">Park</a>
