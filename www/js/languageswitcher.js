@@ -1,5 +1,3 @@
-console.log("languageSwitcher!!!");
-
 LanguageSwitcher = {
 	languages: ["sk", "en"],
 	loadMessages: function(messages) {

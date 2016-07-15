@@ -1,10 +1,14 @@
 {
 	"en" : {
-		"soundwalk-filko-title": "Filko EN",
-		"soundwalk-filko-sub-title": "SoundWalk EN"
+		"filko-title": "Filko EN",
+		"filko-sub-title": "SoundWalk EN",
+		"filko-section-title-exterior": "Park",
+		"filko-section-title-interior": "Castle"
 	},
 	"sk" : {
-		"soundwalk-filko-title": "Filko SK",
-		"soundwalk-filko-sub-title": "SoundWalk SK"
+		"filko-title": "Filko SK",
+		"filko-sub-title": "SoundWalk SK",
+		"filko-section-title-exterior": "Park",
+		"filko-section-title-interior": "Kaštieľ"
 	}
 }
