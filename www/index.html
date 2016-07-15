@@ -39,6 +39,16 @@
     $(document).ready(function() {
       document.addEventListener("deviceready", onDeviceReady, true);
       // onDeviceReady(); //only for debuging
+
+      // TODO: load messages from external JSON
+      LanguageSwitcher.loadMessages();
+      $('.ui-langswitch-en').click( function() {LanguageSwitcher.switchLanguage("#home-page", "en")} );
+      $('.ui-langswitch-sk').click( function() {LanguageSwitcher.switchLanguage("#home-page", "sk")} );
+
+      // set default languge
+      // TODO: detect preferred language from device
+      // LanguageSwitcher.setLanguage('sk'); // doesnt update buttons state
+      $('.ui-langswitch-sk').click();
     });
 
     var audioMedia = null,
@@ -47,11 +57,6 @@
     is_paused = false;
 
     function onDeviceReady() {
-      languageSwitcher.loadMessages();
-      languageSwitcher.setLanguage('sk');
-      $("#home-page").i18n();
-
-
       var uzPulzoval = false;
 
         if(navigator.userAgent.match(/iP[ha][od].*OS 7/)) { //if ios7
@@ -194,9 +199,14 @@
 </head>
 <body>
   <div id="home-page" data-role="page">
-   <!-- <div data-role="main"> -->
-   <!-- <div class="right sng_padding"><span class="icon-sng bigger"></span></div> -->
-   <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
+  <!-- <div data-role="main"> -->
+  <!-- <div class="right sng_padding"><span class="icon-sng bigger"></span></div> -->
+  <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
+  
+  <div class="languageSwitch ui-btn-left" data-role="controlgroup">
+    <a class="ui-langswitch-en" href="index.html" data-role="button" data-inline="true" data-mini="true">EN</a>
+    <a class="ui-langswitch-sk" href="index.html" data-role="button" data-inline="true" data-mini="true">SK</a>
+  </div>
 
    <div class="center-wrapper intro-screen">
     <h1 data-i18n="soundwalk-filko-title" class="intro-nadpis">Filko</h1>

@@ -1,6 +1,6 @@
 console.log("languageSwitcher!!!");
 
-languageSwitcher = {
+LanguageSwitcher = {
 	languages: ["en", "sk"],
 	loadMessages: function() {
 		$.i18n().load( {
@@ -15,12 +15,15 @@ languageSwitcher = {
 		} );
 	},
 	setLanguage: function(language) {
-		if ($.inArray(language, languageSwitcher.languages)) {
+		if ($.inArray(language, LanguageSwitcher.languages) > -1) {
 			$.i18n( {locale: language} );
 		}
 		else {
 			console.log("unknown language "+language+" passed to setLanguage()");
 		}
-		
 	},
+	switchLanguage: function(selector, language) {
+		LanguageSwitcher.setLanguage(language);
+		$(selector).i18n();
+	}
 }
