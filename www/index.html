@@ -40,14 +40,11 @@
       document.addEventListener("deviceready", onDeviceReady, true);
       // onDeviceReady(); //only for debuging
 
-      // TODO: load messages from external JSON
-      LanguageSwitcher.loadMessages();
+      // LanguageSwitcher initialisation
       $('.ui-langswitch-en').click( function() {LanguageSwitcher.switchLanguage("#home-page", "en")} );
       $('.ui-langswitch-sk').click( function() {LanguageSwitcher.switchLanguage("#home-page", "sk")} );
-
       // set default languge
       // TODO: detect preferred language from device
-      // LanguageSwitcher.setLanguage('sk'); // doesnt update buttons state
       $('.ui-langswitch-sk').click();
     });
 
