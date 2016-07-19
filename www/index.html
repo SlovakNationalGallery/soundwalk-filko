@@ -19,18 +19,56 @@
   <!-- // <script src="js/jquery.mobile-1.4.0-rc.1.min.js"></script> -->
   <script src="js/jquery.mobile.custom.min.js"></script>
 
+  <!-- jQuery.i18n -->
+  <script src="js/jquery.i18n/jquery.i18n.js"></script>
+  <script src="js/jquery.i18n/jquery.i18n.messagestore.js"></script>
+  <script src="js/jquery.i18n/jquery.i18n.fallbacks.js"></script>
+  <script src="js/jquery.i18n/jquery.i18n.parser.js"></script>
+  <script src="js/jquery.i18n/jquery.i18n.emitter.js"></script>
+  <script src="js/jquery.i18n/jquery.i18n.language.js"></script>
 
   <!-- // <script src="js/jquery.min.js"></script> -->
   <!-- // <script src="js/jquery.mobile-1.3.1.min.js"></script> -->
 
   <script src="js/utility.js"></script>
   <script src="js/player.js"></script>
+  <script src="js/languageswitcher.js"></script>
 
   <script type="text/javascript">
 
     $(document).ready(function() {
       document.addEventListener("deviceready", onDeviceReady, true);
       // onDeviceReady(); //only for debuging
+
+      // LanguageSwitcher initialisation
+      $('.ui-langswitch-en').click( function() {
+        LanguageSwitcher.switchLanguage("body", "en");
+        $('.ui-langswitch-sk').removeClass('ui-btn-active');
+      } );
+      $('.ui-langswitch-sk').click( function() {
+        LanguageSwitcher.switchLanguage("body", "sk");
+        $('.ui-langswitch-en').removeClass('ui-btn-active');
+      } );
+      
+      // set default languge
+      // TODO: detect preferred language from device
+      $('.ui-langswitch-sk').click();
+
+      $( "#home-page" ).on( "pagecontainerbeforeshow", function( event, ui ) {
+        console.log("#home-page pagecontainerbeforeshow!!!");
+      } );
+      
+      // add active ui class to button to keep state persistent after page transitions
+      $( "body" ).on( "pagecontainerbeforetransition", function( event, ui ) {
+        if (ui.toPage[0].id === "home-page") {
+          if ($.i18n().locale === 'en') {
+            $(".ui-langswitch-en").addClass('ui-btn-active');
+          }
+          else if ($.i18n().locale === 'sk') {
+            $(".ui-langswitch-sk").addClass('ui-btn-active');
+          }
+        }
+      } );
     });
 
     var audioMedia = null,
@@ -181,42 +219,47 @@
 </head>
 <body>
   <div id="home-page" data-role="page">
-   <!-- <div data-role="main"> -->
-   <!-- <div class="right sng_padding"><span class="icon-sng bigger"></span></div> -->
-   <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
+    <!-- <div data-role="main"> -->
+    <!-- <div class="right sng_padding"><span class="icon-sng bigger"></span></div> -->
+    <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
 
-   <div class="center-wrapper intro-screen">
-    <h1 class="intro-nadpis">Filko</h1>
-    <h2 class="intro-nadpis">SoundWalk</h2>
-    <div id="menu-container">
-      <div id="menu"  class="schovane">
-        <a href="#exterier-list-page" class="menu-item grey" id="exterier" data-transition="slidedown">Park</a>
-        <a href="#interier-list-page" class="menu-item grey" id="interier" data-transition="slideup">Kaštieľ</a>
-        <a href="#info-page" class="menu-item horizontal" id="info" data-transition="slide"><span class="icon-question"></span></a>
-        <a href="#contact-page" class="menu-item horizontal" id="contact" data-transition="slide"><span class="icon-contact"></span></a>
-      </div>                  
-      <a id="button-mednansky">
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        width="120px" height="120px" viewBox="0 0 120 120" enable-background="new 0 0 120 120" xml:space="preserve">
-        <g>
-          <circle opacity="0.3" fill="#00C762" cx="60" cy="60" r="59.333" id="mednansky-circle" />
-          <polygon fill="#F4F4F4" points="79.06,66.577 76.013,97.414 60.681,107.771 45.172,97.414 42.145,66.577 60.624,76.83  "/>
-          <polygon fill="#181815" points="79.136,56.761 82.651,17.716 36.98,17.716 40.761,56.64 29.643,54.607 30.59,61.426 89.771,61.426 
-          90.716,54.607   "/>
-          <polygon fill="#00f087" points="60,52.52 48.577,52.52 48.577,32.913 51.987,32.913 51.987,49.11 60,49.11   "/>
-          <polygon fill="#00f087" points="50.218,87.041 55.454,82.692 60.628,85.899 65.802,82.692 71.028,87.034 74.212,85.246 
-          66.095,78.501 60.628,81.888 55.163,78.501 47.035,85.254   "/>
-        </g>
-      </svg>
-    </a>
+    <div class="languageSwitch ui-btn-left" data-role="controlgroup">
+      <a class="ui-langswitch-en" href="index.html" data-role="button" data-inline="true" data-mini="true">EN</a>
+      <a class="ui-langswitch-sk" href="index.html" data-role="button" data-inline="true" data-mini="true">SK</a>
+    </div>
+
+    <div class="center-wrapper intro-screen">
+      <h1 data-i18n="filko-title" class="intro-nadpis">Filko</h1>
+      <h2 data-i18n="filko-sub-title" class="intro-nadpis">SoundWalk</h2>
+      <div id="menu-container">
+        <div id="menu"  class="schovane">
+          <a href="#exterier-list-page" class="menu-item grey" id="exterier" data-transition="slidedown" data-i18n="filko-section-title-exterior">Park</a>
+          <a href="#interier-list-page" class="menu-item grey" id="interier" data-transition="slideup" data-i18n="filko-section-title-interior">Kaštieľ</a>
+          <a href="#info-page" class="menu-item horizontal" id="info" data-transition="slide"><span class="icon-question"></span></a>
+          <a href="#contact-page" class="menu-item horizontal" id="contact" data-transition="slide"><span class="icon-contact"></span></a>
+        </div>                  
+        <a id="button-mednansky">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="120px" height="120px" viewBox="0 0 120 120" enable-background="new 0 0 120 120" xml:space="preserve">
+          <g>
+            <circle opacity="0.3" fill="#00C762" cx="60" cy="60" r="59.333" id="mednansky-circle" />
+            <polygon fill="#F4F4F4" points="79.06,66.577 76.013,97.414 60.681,107.771 45.172,97.414 42.145,66.577 60.624,76.83  "/>
+            <polygon fill="#181815" points="79.136,56.761 82.651,17.716 36.98,17.716 40.761,56.64 29.643,54.607 30.59,61.426 89.771,61.426 
+            90.716,54.607   "/>
+            <polygon fill="#00f087" points="60,52.52 48.577,52.52 48.577,32.913 51.987,32.913 51.987,49.11 60,49.11   "/>
+            <polygon fill="#00f087" points="50.218,87.041 55.454,82.692 60.628,85.899 65.802,82.692 71.028,87.034 74.212,85.246 
+            66.095,78.501 60.628,81.888 55.163,78.501 47.035,85.254   "/>
+          </g>
+        </svg>
+      </a>
+    </div>
+    <h3 class="intro-nadpis">
+      Stanislav<br>
+      Filko<br>
+      1937 — 2015
+    </h3>                
   </div>
-  <h3 class="intro-nadpis">
-    Stanislav<br>
-    Filko<br>
-    1937 — 2015
-  </h3>                
-</div>
-<!-- </div> -->
+  <!-- </div> -->
 </div>   <!-- /page -->
 
 <!-- PAGE INTERIER LIST -->
@@ -322,7 +365,7 @@
       </svg>
     </div>
 
-    <h1>Kaštieľ</h1>
+    <h1 data-i18n="filko-section-title-interior">Kaštieľ</h1>
 
   </div>
   <a href="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left" data-transition="slidedown">Späť</a>
@@ -398,7 +441,7 @@
         l-1.208,4.641h41.397c26.686-94.697,94.408-142.373,206.684-145.438V122.144z"/>
       </svg></div>
 
-      <h1>Park</h1>
+      <h1 data-i18n="filko-section-title-exterior">Park</h1>
 
     </div>
     <a href="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left">Späť</a>
@@ -453,8 +496,8 @@
 
     <p>V aplikácii boli použité archívne materiály z Národného filmového archívu Slovenského filmového ústavu v Bratislave <br>(Muž, ktorý luže - 1968, r. A.Robbe-Grillet)</p>
   </div>
-  </div>
-  </div>
+</div>
+</div>
 </div>
 
 
@@ -473,58 +516,58 @@
       <div class="contact-item">
         <p>Denne 10.00 – 18.00</p> 
         <p>V zimnom období (16. 9. – 14. 6.)<br>
-        Streda – nedeľa 10.00 – 17.00</p>
-      </div>
-      <h2>Kontakt</h2>
-      <div class="contact-item">
-        <span class="icon-contact contact-icon"></span>
-        <div class="contact-content">
-          SNG – Kaštieľ Strážky<br>
-          Mednyánszkeho 25<br>
-          059 01 Spišská Belá<br>
-          <!-- <a href="maps:Kaštiel+Strážky%2C+Ladislava+Medňanského%2C+Spišská+Belá%2C+Slovenská+republika">zobraziť mapu <span class="icon-arrow-right"></span></a> -->
-          <a href="http://maps.google.com/?q=Ka%C5%A1tiel+Str%C3%A1%C5%BEky,+Ladislava+Med%C5%88ansk%C3%A9ho,+Spi%C5%A1sk%C3%A1+Bel%C3%A1,+Slovensk%C3%A1+republika&amp;ll=49.172558,20.456028&amp;spn=0.016217,0.029311&amp;sll=37.06250000000001,-95.67706800000003&amp;sspn=50.415107642905134,102.22236270375726" class="external">zobraziť mapu <span class="icon-arrow-right"></span></a>
+          Streda – nedeľa 10.00 – 17.00</p>
         </div>
-        <!-- <a href="index.html" data-role="button"   data-icon="arrow-r" data-iconpos="right">Zobraziť na mape</a> -->
-      </div>
-      <div class="contact-item">
-        <span class="icon-phone contact-icon"></span>
-        <div class="contact-content">
-          00-421-52-45 81 312<br>
-          <a href="tel:+421524581312">zavolať <span class="icon-arrow-right"></span></a>
+        <h2>Kontakt</h2>
+        <div class="contact-item">
+          <span class="icon-contact contact-icon"></span>
+          <div class="contact-content">
+            SNG – Kaštieľ Strážky<br>
+            Mednyánszkeho 25<br>
+            059 01 Spišská Belá<br>
+            <!-- <a href="maps:Kaštiel+Strážky%2C+Ladislava+Medňanského%2C+Spišská+Belá%2C+Slovenská+republika">zobraziť mapu <span class="icon-arrow-right"></span></a> -->
+            <a href="http://maps.google.com/?q=Ka%C5%A1tiel+Str%C3%A1%C5%BEky,+Ladislava+Med%C5%88ansk%C3%A9ho,+Spi%C5%A1sk%C3%A1+Bel%C3%A1,+Slovensk%C3%A1+republika&amp;ll=49.172558,20.456028&amp;spn=0.016217,0.029311&amp;sll=37.06250000000001,-95.67706800000003&amp;sspn=50.415107642905134,102.22236270375726" class="external">zobraziť mapu <span class="icon-arrow-right"></span></a>
+          </div>
+          <!-- <a href="index.html" data-role="button"   data-icon="arrow-r" data-iconpos="right">Zobraziť na mape</a> -->
+        </div>
+        <div class="contact-item">
+          <span class="icon-phone contact-icon"></span>
+          <div class="contact-content">
+            00-421-52-45 81 312<br>
+            <a href="tel:+421524581312">zavolať <span class="icon-arrow-right"></span></a>
 
-          <!-- <a href="index.html" data-role="button" data-inline="true" >Zavolať <span class="icon-arrow-right"></span></a> -->
-        </div>
+            <!-- <a href="index.html" data-role="button" data-inline="true" >Zavolať <span class="icon-arrow-right"></span></a> -->
+          </div>
 
-      </div>
-      <div class="contact-item">
-        <span class="icon-mail contact-icon"></span>
-        <div class="contact-content">
-          <a href="mailto:strazky@sng.sk">strazky@sng.sk</a>
+        </div>
+        <div class="contact-item">
+          <span class="icon-mail contact-icon"></span>
+          <div class="contact-content">
+            <a href="mailto:strazky@sng.sk">strazky@sng.sk</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon"></span>
+          <div class="contact-content">
+            <a href="http://www.sng.sk/sk/uvod/vysunute-pracoviska/strazky" class="external">www.sng.sk</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon"></span>
+          <div class="contact-content">
+            <a href="http://www.facebook.com/pages/SNG-Kaštieľ-Strážky/392651784106507" class="external">facebook</a>
+          </div>
         </div>
       </div>
-      <div class="contact-item">
-        <span class="contact-icon"></span>
-        <div class="contact-content">
-          <a href="http://www.sng.sk/sk/uvod/vysunute-pracoviska/strazky" class="external">www.sng.sk</a>
-        </div>
+
+      <div class="ui-content green-panel">
+        <!-- <hr /> -->
+        <h2>O kaštieli</h2>
+        <p>Slovenská národná galéria získala objekt Kaštieľa Strážky do správy v roku 1972 prevodom po smrti bývalej majiteľky, barónky Margity Czóbelovej. V kaštieli sa realizovala rekonštrukcia aj revitalizácia anglického parku z 19. storočia, kde je v súčasnosti nainštalovaná expozícia plastiky. Vo výstavných priestoroch kaštieľa sú umiestnené stále expozície, konajú sa tu hudobno-dramatické a vzdelávacie programy. Stále expozície približujú najmä dielo Ladislava Mednyánszkeho, portrétnu tvorbu na Spiši, zbierky historickej knižnice a mobiliár zámku.</p>
       </div>
-      <div class="contact-item">
-        <span class="contact-icon"></span>
-        <div class="contact-content">
-          <a href="http://www.facebook.com/pages/SNG-Kaštieľ-Strážky/392651784106507" class="external">facebook</a>
-        </div>
-      </div>
+
+
     </div>
-
-    <div class="ui-content green-panel">
-      <!-- <hr /> -->
-      <h2>O kaštieli</h2>
-      <p>Slovenská národná galéria získala objekt Kaštieľa Strážky do správy v roku 1972 prevodom po smrti bývalej majiteľky, barónky Margity Czóbelovej. V kaštieli sa realizovala rekonštrukcia aj revitalizácia anglického parku z 19. storočia, kde je v súčasnosti nainštalovaná expozícia plastiky. Vo výstavných priestoroch kaštieľa sú umiestnené stále expozície, konajú sa tu hudobno-dramatické a vzdelávacie programy. Stále expozície približujú najmä dielo Ladislava Mednyánszkeho, portrétnu tvorbu na Spiši, zbierky historickej knižnice a mobiliár zámku.</p>
-    </div>
-
-
-  </div>
-</div> <!-- /page -->
+  </div> <!-- /page -->
 </body>
 </html>
