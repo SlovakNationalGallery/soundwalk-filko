@@ -76,9 +76,14 @@
       navigator.globalization.getPreferredLanguage(
           function (language) {
             var setLang = LanguageSwitcher.setLangFromGlobalizationPrefLang(language.value);
-            if (setLang) { triggerLanguageUI(setLang); }
+            if (setLang) { 
+              triggerLanguageUI(setLang); 
+            }
+            else {
+              triggerLanguageUI(LanguageSwitcher.fallbackLang);
+            }
           },
-          function () {console.log('Error getting language');}
+          function (error) { console.log(error); }
       );
       var uzPulzoval = false;
 

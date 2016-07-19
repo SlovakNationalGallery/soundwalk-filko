@@ -1,5 +1,6 @@
 LanguageSwitcher = {
 	languages: ["sk", "en"],
+	fallbackLang: "sk",
 	loadMessages: function(messages) {
 		$.i18n().load( messages );
 	},
