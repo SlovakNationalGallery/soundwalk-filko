@@ -14,10 +14,10 @@ Requires [Node.js](https://nodejs.org/)
 
 ```
 sudo npm install -g phonegap
-phonegap  plugin add cordova-plugin-media
-phonegap  plugin add cordova-plugin-inappbrowser
-phonegap  plugins add cordova-plugin-device
-phonegap run ios
+phonegap plugin add cordova-plugin-media
+phonegap plugin add cordova-plugin-inappbrowser
+phonegap plugin add cordova-plugin-device
+phonegap plugin add cordova-plugin-globalization
 ```
 
 ## Usage

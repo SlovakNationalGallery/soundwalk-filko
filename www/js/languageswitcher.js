@@ -16,10 +16,20 @@ LanguageSwitcher = {
 	switchLanguage: function(selector, language) {
 		LanguageSwitcher.setLanguage(language);
 		$(selector).i18n();
+	},
+	// set language from value returned by navigator.globalization.getPreferredLanguage
+	setLangFromGlobalizationPrefLang: function(preferredLangValue) {
+		for (var i = 0; i < LanguageSwitcher.languages.length; i++) {
+			if (preferredLangValue.startsWith(LanguageSwitcher.languages[i])) {
+				LanguageSwitcher.setLanguage(LanguageSwitcher.languages[i]);
+				return LanguageSwitcher.languages[i];
+			}
+		}
+		console.log("unknown preferred language value "+preferredLangValue+" passed to setLangFromGlobalizationPrefLang()");
+		return false;
 	}
 }
 
 $.getJSON( "i18n/messages.json?v="+new Date().getTime(), function( data ) {
-  console.log("getJSON success");
   LanguageSwitcher.loadMessages(data);
 });

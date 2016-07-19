@@ -50,14 +50,6 @@
         $('.ui-langswitch-en').removeClass('ui-btn-active');
       } );
       
-      // set default languge
-      // TODO: detect preferred language from device
-      $('.ui-langswitch-sk').click();
-
-      $( "#home-page" ).on( "pagecontainerbeforeshow", function( event, ui ) {
-        console.log("#home-page pagecontainerbeforeshow!!!");
-      } );
-      
       // add active ui class to button to keep state persistent after page transitions
       $( "body" ).on( "pagecontainerbeforetransition", function( event, ui ) {
         if (ui.toPage[0].id === "home-page") {
@@ -77,31 +69,38 @@
     is_paused = false;
 
     function onDeviceReady() {
+      navigator.globalization.getPreferredLanguage(
+          function (language) {
+            var setLang = LanguageSwitcher.setLangFromGlobalizationPrefLang(language.value);
+            if (setLang) { triggerLanguageUI(setLang); }
+          },
+          function () {console.log('Error getting language');}
+      );
       var uzPulzoval = false;
 
-        if(navigator.userAgent.match(/iP[ha][od].*OS 7/)) { //if ios7
-          $('.ui-btn-left, .ui-btn-right ').css('top','.48em');
-        }
+      if(navigator.userAgent.match(/iP[ha][od].*OS 7/)) { //if ios7
+        $('.ui-btn-left, .ui-btn-right ').css('top','.48em');
+      }
 
-        createList("exterier.json", "#exterier-list");
-        createList("interier.json", "#interier-list");
-        $("#exterier-list, #interier-list").collapsibleset();
+      createList("exterier.json", "#exterier-list");
+      createList("interier.json", "#interier-list");
+      $("#exterier-list, #interier-list").collapsibleset();
 
-        $("#button-mednansky").click(
-          function(event) {
-            if ($(this).hasClass("active")) {
-              $('.intro-nadpis').fadeTo('normal', 1);
-              $('#menu').addClass('schovane');
-              $('#button-mednansky').removeClass('active');
-            } else {
-              $('.intro-nadpis').fadeTo('normal', 0);
-              $('#menu').removeClass('schovane');
-              $('#button-mednansky').addClass('active');
-            }
-            // $('.menu-item').hide();
-            event.stopPropagation();
+      $("#button-mednansky").click(
+        function(event) {
+          if ($(this).hasClass("active")) {
+            $('.intro-nadpis').fadeTo('normal', 1);
+            $('#menu').addClass('schovane');
+            $('#button-mednansky').removeClass('active');
+          } else {
+            $('.intro-nadpis').fadeTo('normal', 0);
+            $('#menu').removeClass('schovane');
+            $('#button-mednansky').addClass('active');
           }
-          );
+          // $('.menu-item').hide();
+          event.stopPropagation();
+        }
+        );
 
         // pulzovanie po spusteni
         if (!uzPulzoval) {
@@ -196,7 +195,7 @@
 
         });
 
-      }
+      };
 
       function initPlayer(thePlayer) {
         Player.stop();
@@ -215,6 +214,18 @@
       Player.stop();
     };
 
+    function triggerLanguageUI(language) {
+      switch (language) {
+        case "en":
+          $('.ui-langswitch-en').click();
+          break;
+        case "sk":
+          $('.ui-langswitch-sk').click();
+          break;
+        default:
+          console.log("unknown language "+language+" passed to triggerLanguageUI()");
+      }
+    };
   </script>
 </head>
 <body>
