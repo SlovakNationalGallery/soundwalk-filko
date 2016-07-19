@@ -53,11 +53,15 @@
       // add active ui class to button to keep state persistent after page transitions
       $( "body" ).on( "pagecontainerbeforetransition", function( event, ui ) {
         if (ui.toPage[0].id === "home-page") {
-          if ($.i18n().locale === 'en') {
-            $(".ui-langswitch-en").addClass('ui-btn-active');
-          }
-          else if ($.i18n().locale === 'sk') {
-            $(".ui-langswitch-sk").addClass('ui-btn-active');
+          switch ($.i18n().locale) {
+            case "en":
+              $(".ui-langswitch-en").addClass('ui-btn-active');
+              break;
+            case "sk":
+              $(".ui-langswitch-sk").addClass('ui-btn-active');
+              break;
+            default:
+              console.log("unknown locale "+language+" to set active button state");
           }
         }
       } );
