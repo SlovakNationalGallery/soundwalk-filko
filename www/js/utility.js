@@ -18,3 +18,11 @@ var Utility = {
       return string.indexOf(suffix, string.length - suffix.length) !== -1;
    }
 };
+
+// polyfill string.startsWith() in unsupported browswers
+if (!String.prototype.startsWith) {
+    String.prototype.startsWith = function(searchString, position){
+      position = position || 0;
+      return this.substr(position, searchString.length) === searchString;
+  };
+}
