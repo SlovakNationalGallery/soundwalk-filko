@@ -3,9 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, width=device-width, user-scalable=no" />
-  <title>SoundWalk Strážky</title>
-
-
+  <title>SoundWalk Filko</title>
 
   <link rel="stylesheet" href="css/fonts.css" />
   <link rel="stylesheet"  href="css/themes/strazky/jquery.mobile.custom.structure.min.css">
@@ -73,18 +71,9 @@
     is_paused = false;
 
     function onDeviceReady() {
-      navigator.globalization.getPreferredLanguage(
-          function (language) {
-            var setLang = LanguageSwitcher.setLangFromGlobalizationPrefLang(language.value);
-            if (setLang) { 
-              triggerLanguageUI(setLang); 
-            }
-            else {
-              triggerLanguageUI(LanguageSwitcher.fallbackLang);
-            }
-          },
-          function (error) { console.log(error); }
-      );
+      var langToSet = LanguageSwitcher.retrievePreferredLang();
+      triggerLanguageUI(langToSet);
+
       var uzPulzoval = false;
 
       if(navigator.userAgent.match(/iP[ha][od].*OS 7/)) { //if ios7
