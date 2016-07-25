@@ -316,7 +316,7 @@ a.intro-button {
 a.menu-item { 
   position: absolute; text-align: center; display: block; margin: auto; ;
   font-size: 32px;
-  color: #66ff99;
+  /*color: #66ff99;*/
   text-decoration: none;
   -webkit-transition:all .5s ease;
   -moz-transition: all 0.5s ease;
@@ -418,7 +418,7 @@ html .ui-bar-a .ui-slider-track .ui-btn-active,
 html .ui-body-a .ui-slider-track .ui-btn-active,
 html body .ui-group-theme-a .ui-slider-track .ui-btn-active,
 html body div.ui-slider-track.ui-body-a .ui-btn-active {
-  background-color:     #66ff99 /*{a-active-background-color}*/;
+  background-color:     #000000 /*{a-active-background-color}*/;
   border-color:     #d7d8d8 /*{a-active-border}*/;
   color:          #fff /*{a-active-color}*/;
   text-shadow: none !important;
@@ -442,7 +442,7 @@ html head + body .ui-body-a.ui-focus {
 }
 
 .ui-slider-handle {
-  background-color: #00f087 !important;
+  background-color: #000000 !important;
   -webkit-border-radius: 5em;
   border-radius: 5em;
 }
@@ -463,6 +463,7 @@ html head + body .ui-body-a.ui-focus {
 .ui-slider-track.ui-mini {
   height: 8px;
   top: 4px;
+  border: 0;
 }
 
 
@@ -473,7 +474,7 @@ html head + body .ui-body-a.ui-focus {
 html .ui-bar-a .ui-bar-inherit,
 html .ui-body-a .ui-bar-inherit,
 html body .ui-group-theme-a .ui-bar-inherit {
-  background:       #d7d8d8 /*{a-bar-background-color}*/;
+  background:       rgba(0, 0, 0, 0.3) /*{a-bar-background-color}*/;
   text-shadow: none;
   font-weight: normal;
 }
