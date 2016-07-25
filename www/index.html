@@ -31,6 +31,7 @@
   <script src="js/utility.js"></script>
   <script src="js/player.js"></script>
   <script src="js/languageswitcher.js"></script>
+  <script src="js/filkoshoutplayer.js"></script>
 
   <script type="text/javascript">
 
@@ -71,6 +72,11 @@
     is_paused = false;
 
     function onDeviceReady() {
+      FilkoShoutPlayer.initMediaFiles();
+      $("#button-mednansky").click(function (event) {
+        FilkoShoutPlayer.playNextFilkoShout();  
+      });
+
       var langToSet = LanguageSwitcher.retrievePreferredLang();
       triggerLanguageUI(langToSet);
 
