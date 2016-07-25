@@ -155,13 +155,32 @@ div.ui-slider-track
 
 
 .track:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn {
-border-color: #e2f6ed;
-color: #111;
+  border-bottom: 0;
+  color: #111;
 }
 .track:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
-background-color: #e2f6ed;
+  background-color: #ffffff;
 }
-    
+
+.track.white:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track.white:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.track.red:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track.red:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
+  background-color: rgba(248, 0, 48, 0.3);
+}
+.track.blue:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track.blue:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
+  background-color: rgba(24, 95, 172, 0.3);
+}
+.track.black:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track.black:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.track.gold:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track.gold:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
+  background-color: rgba(255, 215, 0, 0.3);
+}
+.track.silver:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track.silver:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
+  background-color: rgba(192, 192, 192, 0.3);
+}
+   
 .track .ui-btn {
   font-size: 18px;
   line-height: 32px;
@@ -364,7 +383,8 @@ html .ui-bar-a .ui-btn:active,
 html .ui-body-a .ui-btn:active,
 html body .ui-group-theme-a .ui-btn:active,
 html head + body .ui-btn.ui-btn-a:active {
-  background:       #e2f6ed /*{a-bdown-background-color}*/;
+  /* background:       #e2f6ed /*{a-bdown-background-color}; */
+  background:       #ffffff /*{a-bdown-background-color}*/;
   border-color:     #d7d8d8 /*{a-bdown-border}*/;
   color:          #111 /*{a-bdown-color}*/;
   text-shadow: none !important;
@@ -456,7 +476,7 @@ html body .ui-group-theme-a .ui-bar-inherit {
 }
 
 .ui-header {
-  background-color: #00f087 !important;
+  background-color: rgba(255, 255, 255, 0.3) !important;
   border: none !important;
 }
 
