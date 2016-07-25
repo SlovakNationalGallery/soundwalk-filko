@@ -34,26 +34,31 @@ h3 {font-size: 16px; margin: 20px auto 0;}
 html .ui-bar-a a,
 html .ui-body-a a,
 html body .ui-group-theme-a a {
-  color: #00f087 /*{a-link-color}*/;
+  /*color: #00f087 /*{a-link-color};*/
+  color: rgba(0, 0, 0, 0.5) /*{a-link-color}*/;
   font-weight: normal;
 }
 .ui-page-theme-a a:visited,
 html .ui-bar-a a:visited,
 html .ui-body-a a:visited,
 html body .ui-group-theme-a a:visited {
-    color: #00f087 /*{a-link-visited}*/;
+    color: rgba(0, 0, 0, 0.5) /*{a-link-visited}*/;
 }
 .ui-page-theme-a a:hover,
 html .ui-bar-a a:hover,
 html .ui-body-a a:hover,
 html body .ui-group-theme-a a:hover {
-  color: #00cd75 /*{a-link-hover}*/;
+  color: rgba(0, 0, 0, 0.7) /*{a-link-hover}*/;
 }
 .ui-page-theme-a a:active,
 html .ui-bar-a a:active,
 html .ui-body-a a:active,
 html body .ui-group-theme-a a:active {
-  color: #00cd75 /*{a-link-active}*/;
+  color: rgba(0, 0, 0, 0.7) /*{a-link-active}*/;
+}
+
+.no-text-shadow {
+  text-shadow: none !important;
 }
 
 .ui-header .ui-title,
