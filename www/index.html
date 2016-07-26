@@ -89,131 +89,93 @@
       createList("filko-sk.json", "#interier-list");
       $("#exterier-list, #interier-list").collapsibleset();
 
-      $("#button-dia").click(
-        function(event) {
-          if ($(this).hasClass("active")) {
-            $('.intro-nadpis').fadeTo('normal', 1);
-            $('#menu').addClass('schovane');
-            $('#button-dia').removeClass('active');
+      $("#interier-list-page").bind("pageinit", function(event) {
+        $("#interier-list a, #exterier-list a").removeClass("ui-btn-icon-left");
+        $('.ui-nosvg .mapka .circle').removeClass("active");
+      });
+      
+      $(document).on('click', '.player-play', function () { Player.playPause(); })
+      $(document).on('slidestop', '.time-slider', function (event) { Player.seekPosition(event.target.value); })
+
+      $(document).on('click', ".external", function (e) {
+        e.preventDefault();
+        var targetURL = $(this).attr("href");
+
+        window.open(targetURL, "_system");
+      });
+
+
+      $(document).on('collapsibleexpand', '.ui-collapsible', function() {
+        $(this).children().next().slideDown(200);
+        var index = $(this).find('.index').html();
+        $('.mapka circle').attr("class", "");
+        $('.mapka circle#zastavka'+index).attr("class", "active");
+        // verzia bez SVG
+        $('.ui-nosvg .mapka .circle').removeClass("active");
+        $('.ui-nosvg .mapka .circle#zastavka'+index).addClass("active");
+        if ($(this).parent().attr("id") == 'interier-list') {
+          if (index==1 || index==8) {
+            $('#kastiel1').show('slow');
+            $('.mapka').removeClass('poschodie2');
           } else {
-            $('.intro-nadpis').fadeTo('normal', 0);
-            $('#menu').removeClass('schovane');
-            $('#button-dia').addClass('active');
+            $('#kastiel1').hide('slow');
+            $('.mapka').addClass('poschodie2');
           }
-          // $('.menu-item').hide();
-          event.stopPropagation();
         }
-        );
+        $(".slider").slider('refresh');
+        initPlayer($(this));
+        // Player.playPause(); 
+      })
 
-        // pulzovanie po spusteni
-        if (!uzPulzoval) {
-          $('#button-dia')
-          .addClass("active")
-          .delay(400).queue(function(next){
-            $(this).removeClass("active");
-            next();
-          });
-          uzPulzoval = true;          
-        }
+      $(document).on('collapsiblecollapse', '.ui-collapsible', function() {
+        $(this).children().next().slideUp(200);
+      });
 
-        $("#exterier-list-page").bind("pageinit", function(event) {
-          $("#interier-list a, #exterier-list a").removeClass("ui-btn-icon-left");
-          $('.ui-nosvg .mapka .circle').removeClass("active");
+    };
+
+    function createList(sourceFile, listId) {
+      $.getJSON(sourceFile, function(data) {         
+        $.each(data, function(index, zastavka){
+          var listItem = '';
+          listItem += '<div data-role="collapsible" class="track '+zastavka.color+'" rel="'+zastavka.audio+'">' + 
+          '<img class="track-bg" src="'+zastavka.bgimg+'" alt=""/>'+
+          '<h3>'+zastavka.title+'<span class="index '+zastavka.color+'">'+(index+1)+'</span></h3>' +
+          '<div class="center-wrapper negative-margin">'+
+          '<a href="#" class="player-play no-text-shadow"><span class="icon-play"></span></a>'+
+          '<div>'+
+          '<label class="media-played">00:00</label><label class="media-duration">00:00</label><br />'+
+          '<input type="range" class="time-slider" value="0" min="0" max="100" data-role="none" data-highlight="true" data-mini="true" />'+
+          '</div>'+
+          '</div>'+
+          '</div>';
+          $(listId).append(listItem);
         });
 
+        $(listId + " .time-slider" ).slider();
+        // $(listId + " .time-slider").trigger('create'); //pozor!
+        $(listId).collapsibleset( "refresh" );
 
-        $("#interier-list-page").bind("pageinit", function(event) {
-          $("#interier-list a, #exterier-list a").removeClass("ui-btn-icon-left");
-          $('.ui-nosvg .mapka .circle').removeClass("active");
-        });
+        // $(listId).on('collapsibleexpand', function () {
+        //     alert('Expanded');
+        // }).on('collapsiblecollapse', function () {
+        //     alert('Collapsed');
+        // });
 
+        $("#interier-list a, #exterier-list a").removeClass("ui-btn-icon-left");
+      });
+    };
 
-        $(document).on('click', '.player-play', function () { Player.playPause(); })
-        $(document).on('slidestop', '.time-slider', function (event) { Player.seekPosition(event.target.value); })
+    function initPlayer(thePlayer) {
+      Player.stop();
 
-        $(document).on('click', ".external", function (e) {
-         e.preventDefault();
-         var targetURL = $(this).attr("href");
-
-         window.open(targetURL, "_system");
-       });
-
-
-        $(document).on('collapsibleexpand', '.ui-collapsible', function() {
-          $(this).children().next().slideDown(200);
-          var index = $(this).find('.index').html();
-          $('.mapka circle').attr("class", "");
-          $('.mapka circle#zastavka'+index).attr("class", "active");
-          // verzia bez SVG
-          $('.ui-nosvg .mapka .circle').removeClass("active");
-          $('.ui-nosvg .mapka .circle#zastavka'+index).addClass("active");
-          if ($(this).parent().attr("id") == 'interier-list') {
-            if (index==1 || index==8) {
-              $('#kastiel1').show('slow');
-              $('.mapka').removeClass('poschodie2');
-            } else {
-              $('#kastiel1').hide('slow');
-              $('.mapka').addClass('poschodie2');
-            }
-          }
-          $(".slider").slider('refresh');
-          initPlayer($(this));
-          // Player.playPause(); 
-        })
-
-        $(document).on('collapsiblecollapse', '.ui-collapsible', function() {
-          $(this).children().next().slideUp(200);
-        });
-
-      };
-
-      function createList(sourceFile, listId) {
-        $.getJSON(sourceFile, function(data) {         
-          $.each(data, function(index, zastavka){
-            var listItem = '';
-            listItem += '<div data-role="collapsible" class="track '+zastavka.color+'" rel="'+zastavka.audio+'">' + 
-            '<img class="track-bg" src="'+zastavka.bgimg+'" alt=""/>'+
-            '<h3>'+zastavka.title+'<span class="index '+zastavka.color+'">'+(index+1)+'</span></h3>' +
-            '<div class="center-wrapper negative-margin">'+
-            '<a href="#" class="player-play no-text-shadow"><span class="icon-play"></span></a>'+
-            '<div>'+
-            '<label class="media-played">00:00</label><label class="media-duration">00:00</label><br />'+
-            '<input type="range" class="time-slider" value="0" min="0" max="100" data-role="none" data-highlight="true" data-mini="true" />'+
-            '</div>'+
-            '</div>'+
-            '</div>';
-            $(listId).append(listItem);
-          });
-
-          $(listId + " .time-slider" ).slider();
-          // $(listId + " .time-slider").trigger('create'); //pozor!
-          $(listId).collapsibleset( "refresh" );
-
-          // $(listId).on('collapsibleexpand', function () {
-          //     alert('Expanded');
-          // }).on('collapsiblecollapse', function () {
-          //     alert('Collapsed');
-          // });
-
-          $("#interier-list a, #exterier-list a").removeClass("ui-btn-icon-left");
-
-        });
-
-      };
-
-      function initPlayer(thePlayer) {
-        Player.stop();
-
-        var root_path = "/";
-        if (device.platform == "Android") {
-          root_path = "/android_asset/www/";
-        }
-      // var soundfile = root_path + 'sounds/' + $(thePlayer).attr('rel');
+      var root_path = "/";
+      if (device.platform == "Android") {
+        root_path = "/android_asset/www/";
+      }
       var soundfile = root_path + 'sounds/' + $(thePlayer).attr('rel');
-      // console.log();
-
       Player.initMedia(soundfile);
     };
+
     function closePlayer() {
       Player.stop();
     };
@@ -234,8 +196,6 @@
 </head>
 <body>
   <div id="home-page" data-role="page">
-    <!-- <div data-role="main"> -->
-    <!-- <div class="right sng_padding"><span class="icon-sng bigger"></span></div> -->
     <div class="logo ui-btn-right">
       <span class="icon-sng"></span>
     </div>
@@ -246,23 +206,26 @@
     </div>
 
     <div class="center-wrapper intro-screen">
-      <h1 class="intro-nadpis">Stano Filko</h1>
-      <h1 class="intro-nadpis">1937 - 2016</h1>
-      <div id="menu-container">
-        <div id="menu"  class="schovane">         
-          <a href="#interier-list-page" class="menu-item grey" id="interier" data-transition="slideup" data-i18n="filko-section-title-interior">Kaštieľ</a>
-          <a href="#info-page" class="menu-item horizontal" id="info" data-transition="slide"><span class="icon-question"></span></a>
-          <a href="#contact-page" class="menu-item horizontal" id="contact" data-transition="slide"><span class="icon-contact"></span></a>
-        </div>                  
-        <a id="button-dia">
-          <img src="images/filko/slide.jpg" alt="filko dia">
-        </a>
-      </div>
+      <h1 class="intro-nadpis">
+        Stano Filko <br>
+        1937 - 2016
+      </h1>
+      <!-- <a id="button-dia"> -->
+      <a id="dia" href="#interier-list-page">
+        <img src="images/filko/slide.jpg" alt="filko dia">
+      </a>
       <h2 id="app-description" data-i18n="filko-app-description" class="intro-nadpis">
         Audio Guide
-      </h2>                
-    </div>
-    <!-- </div> -->
+      </h2>
+      <div>
+        <a href="#info-page" id="info" class="menu-item" data-role="button" data-inline="true" data-mini="true" data-transition="slide" data-direction="reverse">
+          <span class="icon-question"></span>
+        </a>
+        <a href="#contact-page" class="menu-item ui-btn ui-btn-inline" id="contact" data-role="button" data-inline="true" data-mini="true" data-transition="slide">
+          <span class="icon-contact"></span>
+        </a>
+      </div>
+    </div> <!-- center-wrapper -->
   </div>   <!-- /page -->
 
   <!-- PAGE INTERIER LIST -->
@@ -277,69 +240,68 @@
     </div>
   </div> <!-- /page -->
 
-<!-- PAGE ABOUT -->
-<div id="info-page" data-role="page">
-  <header data-role="header" data-position="fixed" data-tap-toggle="false">
-    <a href="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left"  ="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left" data-transition="slide" data-direction="reverse">Späť</a>
-    <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
-    <h1>&nbsp;</h1>
-  </header>
-  <div data-role="main">
-    <div class="ui-content">
-      <h2>Info</h2>
-      <p>
-       Soudwalk Strážky je aplikácia pre mobilné zariadenia, ktorá vás Kaštieľom Strážky prevedie prostredníctvom krátkych audio-príbehov. Ožijú v nich postavy významných obyvateľov kaštieľa  &mdash; „čudáckeho“ maliara Ladislava Mednyánszkeho, jeho príbuznej a poslednej pamätníčky starých čias, barónky Margity Czóbelovej. 
-     </p>
-     <p>V príbehoch sa realita prelína s fikciou: na prízemí kaštieľa sa pred vami pohádajú postavy z portrétnej galérie, v parku sa od sôch dozviete o zakázanej láske Medyánszkeho. Jeho peripetie na vojenskom fronte vám prerozprávajú stromy v parku a život barónky priblíži jej opatrovateľka, pani Mária Milistenferová zo Strážok.</p>
-     <p>Zvuky sprevádzajúce príbehy boli zaznamenané v priestoroch kaštieľa a v jeho bezprostrednom okolí. Na niektorých zastávkach „ozvučujú“ obraz alebo pohľad z okna, v iných dotvárajú atmosféru prostredia. Sú rovnako dôležité ako postavy a ich príbehy, pre najlepší zážitok odporúčame zapožičať si v kaštieli kvalitné slúchadlá.  </p>
-     <p>Zastávky sú rozdelené na dve časti. V parku sa nechajte viesť rozprávačmi príbehov a jednoduchou mapkou, v kaštieli vám pri orientácii pomôže lektor. Príbehy z parku sú dostupné pre všetkých, príbehy z kaštieľa len pre platiacich návštevníkov.</p>
-   </div>
-   <div class="ui-content green-panel">    
-    <h2>O aplikácií</h2>
-    <div class="center-wrapper">
-      <p class="label">Koncepcia</p><p class="cast"> Katarína Fitková <br> Jonathan Prior</p>
-      <p class="label">Produkcia</p><p class="cast"> Barbora Jurinová <br> Michal Čudrnák </p>
-      <p class="label">Scenár</p><p class="cast"> Katarína Fitková</p>
-      <p class="label">Nahrávky, zvukový dizajn</p><p class="cast"> Jonathan Prior <br><small>(<a href="http://12gatestothecity.com/" class="external">12gatestothecity.com</a>)</small></p>
-      <p class="label">Vývoj aplikácie</p><p class="cast"> Igor Rjabinin </p>
-      <p class="label">Grafický dizajn</p><p class="cast"> Braňo Matis </p>
-      <p class="label">Odborná spolupráca</p><p class="cast"> Katarína Beňová<br /> Mária Šelepová</p>
-      <p class="label">Herci</p><p class="cast"> Helena Čertíková<br />
-      Miriam Kalinková<br />
-      František Kovár<br />
-      Dušan Szabó
-    </p>
-    <p class="label">Majster zvuku <br> (štúdiové nahrávky hercov)</p><p class="cast"> Ladislav Borš</p>
-    <p class="label">Špeciálne poďakovanie</p><p class="cast"> Mária Milistenferová<br>
-    <small>(opatrovateľka Margity Czóbelovej)</small></p>
-    <p class="label">Video upútavka</p><p class="cast"> Anton Kajan </p>
-    <p class="label">Video upútavka - hudba</p><p class="cast"> Josh Woodward - Already There<br/><small>(Creative Commons BY 3.0)</small></p>
-    <p class="label">Zvukové nahrávky</p><p class="cast"> <a href="http://bit.ly/1aKcBJi" class="external">archive.org</a> <br/><small>(Creative Commons BY-NC-SA 3.0)</small></p>
-    <p class="label">Zdrojový kód</p><p class="cast"><a href="http://lab.sng.sk/" class="external">lab_SNG</a></p>
-
-    <p>V aplikácii boli použité archívne materiály z Národného filmového archívu Slovenského filmového ústavu v Bratislave <br>(Muž, ktorý luže - 1968, r. A.Robbe-Grillet)</p>
+  <!-- PAGE INFO -->
+  <div id="info-page" data-role="page">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false">
+      <a href="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left" data-transition="slide" data-direction="reverse">Späť</a>
+      <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
+      <h1>&nbsp;</h1>
+    </header>
+    <div data-role="main">
+      <div class="ui-content">
+        <h2>Info</h2>
+        <p>
+         Soudwalk Strážky je aplikácia pre mobilné zariadenia, ktorá vás Kaštieľom Strážky prevedie prostredníctvom krátkych audio-príbehov. Ožijú v nich postavy významných obyvateľov kaštieľa  &mdash; „čudáckeho“ maliara Ladislava Mednyánszkeho, jeho príbuznej a poslednej pamätníčky starých čias, barónky Margity Czóbelovej. 
+        </p>
+        <p>V príbehoch sa realita prelína s fikciou: na prízemí kaštieľa sa pred vami pohádajú postavy z portrétnej galérie, v parku sa od sôch dozviete o zakázanej láske Medyánszkeho. Jeho peripetie na vojenskom fronte vám prerozprávajú stromy v parku a život barónky priblíži jej opatrovateľka, pani Mária Milistenferová zo Strážok.</p>
+        <p>Zvuky sprevádzajúce príbehy boli zaznamenané v priestoroch kaštieľa a v jeho bezprostrednom okolí. Na niektorých zastávkach „ozvučujú“ obraz alebo pohľad z okna, v iných dotvárajú atmosféru prostredia. Sú rovnako dôležité ako postavy a ich príbehy, pre najlepší zážitok odporúčame zapožičať si v kaštieli kvalitné slúchadlá.  </p>
+        <p>Zastávky sú rozdelené na dve časti. V parku sa nechajte viesť rozprávačmi príbehov a jednoduchou mapkou, v kaštieli vám pri orientácii pomôže lektor. Príbehy z parku sú dostupné pre všetkých, príbehy z kaštieľa len pre platiacich návštevníkov.</p>
+      </div>
+      <div class="ui-content green-panel">    
+        <h2>O aplikácií</h2>
+        <div class="center-wrapper">
+          <p class="label">Koncepcia</p><p class="cast"> Katarína Fitková <br> Jonathan Prior</p>
+          <p class="label">Produkcia</p><p class="cast"> Barbora Jurinová <br> Michal Čudrnák </p>
+          <p class="label">Scenár</p><p class="cast"> Katarína Fitková</p>
+          <p class="label">Nahrávky, zvukový dizajn</p><p class="cast"> Jonathan Prior <br><small>(<a href="http://12gatestothecity.com/" class="external">12gatestothecity.com</a>)</small></p>
+          <p class="label">Vývoj aplikácie</p><p class="cast"> Igor Rjabinin </p>
+          <p class="label">Grafický dizajn</p><p class="cast"> Braňo Matis </p>
+          <p class="label">Odborná spolupráca</p><p class="cast"> Katarína Beňová<br /> Mária Šelepová</p>
+          <p class="label">Herci</p>
+          <p class="cast"> 
+            Helena Čertíková<br />
+            Miriam Kalinková<br />
+            František Kovár<br />
+            Dušan Szabó
+          </p>
+          <p class="label">Majster zvuku <br> (štúdiové nahrávky hercov)</p><p class="cast"> Ladislav Borš</p>
+          <p class="label">Špeciálne poďakovanie</p><p class="cast"> Mária Milistenferová<br>
+          <small>(opatrovateľka Margity Czóbelovej)</small></p>
+          <p class="label">Video upútavka</p><p class="cast"> Anton Kajan </p>
+          <p class="label">Video upútavka - hudba</p><p class="cast"> Josh Woodward - Already There<br/><small>(Creative Commons BY 3.0)</small></p>
+          <p class="label">Zvukové nahrávky</p><p class="cast"> <a href="http://bit.ly/1aKcBJi" class="external">archive.org</a> <br/><small>(Creative Commons BY-NC-SA 3.0)</small></p>
+          <p class="label">Zdrojový kód</p><p class="cast"><a href="http://lab.sng.sk/" class="external">lab_SNG</a></p>
+          <p>V aplikácii boli použité archívne materiály z Národného filmového archívu Slovenského filmového ústavu v Bratislave <br>(Muž, ktorý luže - 1968, r. A.Robbe-Grillet)</p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-</div>
 
 
-<!-- PAGE CONTACT -->
-
-
-<div id="contact-page" data-role="page">
-  <header data-role="header" data-position="fixed" data-tap-toggle="false">
-    <a href="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left" data-transition="slide" data-direction="reverse" >Späť</a>
-    <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
-    <h1>&nbsp;</h1>
-  </header>
-  <div data-role="main">
-    <div class="ui-content">
-      <h2>Otváracie hodiny</h2>
-      <div class="contact-item">
-        <p>Denne 10.00 – 18.00</p> 
-        <p>V zimnom období (16. 9. – 14. 6.)<br>
-          Streda – nedeľa 10.00 – 17.00</p>
+  <!-- PAGE CONTACT -->
+  <div id="contact-page" data-role="page">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false">
+      <a href="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left" data-transition="slide" data-direction="reverse" >Späť</a>
+      <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
+      <h1>&nbsp;</h1>
+    </header>
+    <div data-role="main">
+      <div class="ui-content">
+        <h2>Otváracie hodiny</h2>
+        <div class="contact-item">
+          <p>Denne 10.00 – 18.00</p> 
+          <p>V zimnom období (16. 9. – 14. 6.)<br>
+            Streda – nedeľa 10.00 – 17.00</p>
         </div>
         <h2>Kontakt</h2>
         <div class="contact-item">
@@ -348,20 +310,15 @@
             SNG – Kaštieľ Strážky<br>
             Mednyánszkeho 25<br>
             059 01 Spišská Belá<br>
-            <!-- <a href="maps:Kaštiel+Strážky%2C+Ladislava+Medňanského%2C+Spišská+Belá%2C+Slovenská+republika">zobraziť mapu <span class="icon-arrow-right"></span></a> -->
             <a href="http://maps.google.com/?q=Ka%C5%A1tiel+Str%C3%A1%C5%BEky,+Ladislava+Med%C5%88ansk%C3%A9ho,+Spi%C5%A1sk%C3%A1+Bel%C3%A1,+Slovensk%C3%A1+republika&amp;ll=49.172558,20.456028&amp;spn=0.016217,0.029311&amp;sll=37.06250000000001,-95.67706800000003&amp;sspn=50.415107642905134,102.22236270375726" class="external">zobraziť mapu <span class="icon-arrow-right"></span></a>
           </div>
-          <!-- <a href="index.html" data-role="button"   data-icon="arrow-r" data-iconpos="right">Zobraziť na mape</a> -->
         </div>
         <div class="contact-item">
           <span class="icon-phone contact-icon"></span>
           <div class="contact-content">
             00-421-52-45 81 312<br>
             <a href="tel:+421524581312">zavolať <span class="icon-arrow-right"></span></a>
-
-            <!-- <a href="index.html" data-role="button" data-inline="true" >Zavolať <span class="icon-arrow-right"></span></a> -->
           </div>
-
         </div>
         <div class="contact-item">
           <span class="icon-mail contact-icon"></span>
@@ -382,14 +339,10 @@
           </div>
         </div>
       </div>
-
       <div class="ui-content green-panel">
-        <!-- <hr /> -->
         <h2>O kaštieli</h2>
         <p>Slovenská národná galéria získala objekt Kaštieľa Strážky do správy v roku 1972 prevodom po smrti bývalej majiteľky, barónky Margity Czóbelovej. V kaštieli sa realizovala rekonštrukcia aj revitalizácia anglického parku z 19. storočia, kde je v súčasnosti nainštalovaná expozícia plastiky. Vo výstavných priestoroch kaštieľa sú umiestnené stále expozície, konajú sa tu hudobno-dramatické a vzdelávacie programy. Stále expozície približujú najmä dielo Ladislava Mednyánszkeho, portrétnu tvorbu na Spiši, zbierky historickej knižnice a mobiliár zámku.</p>
       </div>
-
-
     </div>
   </div> <!-- /page -->
 </body>

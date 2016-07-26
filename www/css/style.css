@@ -246,10 +246,6 @@ a.intro-button {
   padding: 0.5em;
 }
 
-/*a.intro-button:hover {color: #000 !important;}*/
-/*a.intro-button:hover .green  {color: #000 !important;}*/
-
-
 .contact-content {
   margin-left: 1.5em;
   /*float: left;*/
@@ -287,34 +283,9 @@ a.intro-button {
   background-size: 100% auto;
 }
 
-#button-dia{
-    -webkit-transition: all .5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;  
-}
-
-#button-dia.active {
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
-  transform-origin: 50% 50%;
-  -webkit-transform-origin: 50% 50%;
-}
-
-#button-dia img {
-  position: absolute;
-  width: 150px;
-  height: auto;
-  left: 50%;
-  transform: translate(-50%);
-}
-
-
-#menu-container {
+#dia img {
   position: relative;
+  width: 150px;
 }
 
 #menu {
@@ -337,8 +308,11 @@ a.intro-button {
 
 }
 a.menu-item { 
-  position: absolute; text-align: center; display: block; margin: auto; ;
-  font-size: 32px;
+  /*position: absolute; 
+  text-align: center; 
+  display: block; */
+  margin: auto;
+  font-size: 1em;
   /*color: #66ff99;*/
   text-decoration: none;
   -webkit-transition:all .5s ease;
@@ -357,10 +331,6 @@ a.menu-item.grey {
   color: #848484;
 }
 
-.menu-item#exterier { top: -100px; width: 120px;}
-.menu-item#interier { bottom: -100px; width: 120px;} /*120 + 10 + 70margin*/
-.menu-item#info { top: 50%; left: -70px; width: 30px; text-align: right; line-height: 1px;} 
-.menu-item#contact { top: 50%; right: -70px; width: 30px; text-align: left; line-height: 1px;} /*120 + 20 margin*/
 #menu.schovane { 
   -webkit-transform: scale(.001);
   transform: scale(.001);
@@ -368,7 +338,6 @@ a.menu-item.grey {
 }
 
 #app-description {
-  margin-top: 50px;
   color: #848484;
 }
 
