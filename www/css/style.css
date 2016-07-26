@@ -70,6 +70,7 @@ html body .ui-group-theme-a a:active {
 
 .center-wrapper{
   text-align: center;
+  position: relative;
 }
 .center-wrapper * {
   margin-left: auto;
@@ -164,25 +165,27 @@ div.ui-slider-track
   color: #111;
 }
 .track:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
-.track.white:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track.white:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
+.track.white:not(.ui-collapsible-collapsed) {
   background-color: rgba(255, 255, 255, 0.3);
 }
-.track.red:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track.red:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
+.track.red:not(.ui-collapsible-collapsed) {
   background-color: rgba(248, 0, 48, 0.3);
 }
-.track.blue:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track.blue:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
+
+.track.blue:not(.ui-collapsible-collapsed) {
   background-color: rgba(24, 95, 172, 0.3);
 }
-.track.black:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track.black:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
+
+.track.black:not(.ui-collapsible-collapsed) {
   background-color: rgba(0, 0, 0, 0.3);
 }
-.track.gold:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track.gold:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
+.track.gold:not(.ui-collapsible-collapsed) {
   background-color: rgba(255, 215, 0, 0.3);
 }
-.track.silver:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track.silver:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
+.track.silver:not(.ui-collapsible-collapsed) {
   background-color: rgba(192, 192, 192, 0.3);
 }
    
@@ -216,6 +219,15 @@ div.ui-slider-track
   color: rgba(192, 192, 192, 1);
 }
 
+.track img.track-bg {
+  position: fixed;
+  top: 63px;
+  z-index: 0;
+}
+
+.track .ui-collapsible-heading {
+  z-index: 1;
+}
 
 .ui-header .ui-title, .ui-footer .ui-title { margin: .6em 25% .8em; }
 
@@ -459,6 +471,8 @@ html head + body .ui-body-a.ui-focus {
   box-shadow: 0 0 12px      #0066ff /*{a-active-background-color}*/;
 }
 
+
+/* SLIDER */
 .ui-slider-handle {
   background-color: #000000 !important;
   -webkit-border-radius: 5em;
@@ -503,7 +517,7 @@ html body .ui-group-theme-a .ui-bar-inherit {
 }
 
 .ui-header {
-  background-color: rgba(255, 255, 255, 0.3) !important;
+  background-color: rgba(255, 255, 255, 1) !important;
   border: none !important;
 }
 
