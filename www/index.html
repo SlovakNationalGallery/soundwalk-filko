@@ -73,7 +73,7 @@
 
     function onDeviceReady() {
       FilkoShoutPlayer.initMediaFiles();
-      $("#button-mednansky").click(function (event) {
+      $("#button-dia").click(function (event) {
         FilkoShoutPlayer.playNextFilkoShout();  
       });
 
@@ -89,16 +89,16 @@
       createList("filko-sk.json", "#interier-list");
       $("#exterier-list, #interier-list").collapsibleset();
 
-      $("#button-mednansky").click(
+      $("#button-dia").click(
         function(event) {
           if ($(this).hasClass("active")) {
             $('.intro-nadpis').fadeTo('normal', 1);
             $('#menu').addClass('schovane');
-            $('#button-mednansky').removeClass('active');
+            $('#button-dia').removeClass('active');
           } else {
             $('.intro-nadpis').fadeTo('normal', 0);
             $('#menu').removeClass('schovane');
-            $('#button-mednansky').addClass('active');
+            $('#button-dia').addClass('active');
           }
           // $('.menu-item').hide();
           event.stopPropagation();
@@ -107,7 +107,7 @@
 
         // pulzovanie po spusteni
         if (!uzPulzoval) {
-          $('#button-mednansky')
+          $('#button-dia')
           .addClass("active")
           .delay(400).queue(function(next){
             $(this).removeClass("active");
@@ -236,7 +236,9 @@
   <div id="home-page" data-role="page">
     <!-- <div data-role="main"> -->
     <!-- <div class="right sng_padding"><span class="icon-sng bigger"></span></div> -->
-    <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
+    <div class="logo ui-btn-right">
+      <span class="icon-sng"></span>
+    </div>
 
     <div class="languageSwitch ui-btn-left" data-role="controlgroup">
       <a class="ui-langswitch-en" href="index.html" data-role="button" data-inline="true" data-mini="true">EN</a>
@@ -244,54 +246,38 @@
     </div>
 
     <div class="center-wrapper intro-screen">
-      <h1 data-i18n="filko-title" class="intro-nadpis">Filko</h1>
-      <h2 data-i18n="filko-sub-title" class="intro-nadpis">SoundWalk</h2>
+      <h1 class="intro-nadpis">Stano Filko</h1>
+      <h1 class="intro-nadpis">1937 - 2016</h1>
       <div id="menu-container">
-        <div id="menu"  class="schovane">
-          <!-- <a href="#exterier-list-page" class="menu-item grey" id="exterier" data-transition="slidedown" data-i18n="filko-section-title-exterior">Park</a> -->
+        <div id="menu"  class="schovane">         
           <a href="#interier-list-page" class="menu-item grey" id="interier" data-transition="slideup" data-i18n="filko-section-title-interior">Kaštieľ</a>
           <a href="#info-page" class="menu-item horizontal" id="info" data-transition="slide"><span class="icon-question"></span></a>
           <a href="#contact-page" class="menu-item horizontal" id="contact" data-transition="slide"><span class="icon-contact"></span></a>
         </div>                  
-        <a id="button-mednansky">
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          width="120px" height="120px" viewBox="0 0 120 120" enable-background="new 0 0 120 120" xml:space="preserve">
-          <g>
-            <circle opacity="0.3" fill="#00C762" cx="60" cy="60" r="59.333" id="mednansky-circle" />
-            <polygon fill="#F4F4F4" points="79.06,66.577 76.013,97.414 60.681,107.771 45.172,97.414 42.145,66.577 60.624,76.83  "/>
-            <polygon fill="#181815" points="79.136,56.761 82.651,17.716 36.98,17.716 40.761,56.64 29.643,54.607 30.59,61.426 89.771,61.426 
-            90.716,54.607   "/>
-            <polygon fill="#00f087" points="60,52.52 48.577,52.52 48.577,32.913 51.987,32.913 51.987,49.11 60,49.11   "/>
-            <polygon fill="#00f087" points="50.218,87.041 55.454,82.692 60.628,85.899 65.802,82.692 71.028,87.034 74.212,85.246 
-            66.095,78.501 60.628,81.888 55.163,78.501 47.035,85.254   "/>
-          </g>
-        </svg>
-      </a>
+        <a id="button-dia">
+          <img src="images/filko/slide.jpg" alt="filko dia">
+        </a>
+      </div>
+      <h2 id="app-description" data-i18n="filko-app-description" class="intro-nadpis">
+        Audio Guide
+      </h2>                
     </div>
-    <h3 class="intro-nadpis">
-      Stanislav<br>
-      Filko<br>
-      1937 — 2015
-    </h3>                
-  </div>
-  <!-- </div> -->
-</div>   <!-- /page -->
+    <!-- </div> -->
+  </div>   <!-- /page -->
 
-<!-- PAGE INTERIER LIST -->
-<div id="interier-list-page" data-role="page">
-  <header data-role="header" data-position="fixed" data-tap-toggle="false">
-    <h1></h1> <!-- empty header to fill height of header -->
-    <a href="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left" data-transition="slidedown">Späť</a>
-    <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
-  </header>
-<div data-role="main" class="ui-content">
-  <div data-role="collapsible-set"  data-inset="false" id="interier-list"></div>
-</div>
-</div> <!-- /page -->
+  <!-- PAGE INTERIER LIST -->
+  <div id="interier-list-page" data-role="page">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false">
+      <h1></h1> <!-- empty header to fill height of header -->
+      <a href="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left" data-transition="slidedown">Späť</a>
+      <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
+    </header>
+    <div data-role="main" class="ui-content">
+      <div data-role="collapsible-set"  data-inset="false" id="interier-list"></div>
+    </div>
+  </div> <!-- /page -->
 
 <!-- PAGE ABOUT -->
-
-
 <div id="info-page" data-role="page">
   <header data-role="header" data-position="fixed" data-tap-toggle="false">
     <a href="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left"  ="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left" data-transition="slide" data-direction="reverse">Späť</a>

@@ -25,9 +25,6 @@ button,
 }
 
 hr {background-color: #b9baba; color: #b9baba; border: 0; height: 1px;}
-h1 {font-size: 64px; margin: 0.2em auto 0em auto;}
-h2 {font-size: 24px; margin: 0 auto 20px;}
-h3 {font-size: 16px; margin: 20px auto 0;}
 
 /* Links */
 .ui-page-theme-a a,
@@ -277,7 +274,7 @@ a.intro-button {
   margin-top: -200px;
 }
 
-#button-mednansky {
+#button-dia {
   position: relative;
   z-index: 100;
   display:  block;
@@ -285,12 +282,12 @@ a.intro-button {
   height: 120px;
 }
 
-.ui-nosvg #button-mednansky {
+.ui-nosvg #button-dia {
   background: transparent url(../images/button.png);
   background-size: 100% auto;
 }
 
-#button-mednansky{
+#button-dia{
     -webkit-transition: all .5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
@@ -298,7 +295,7 @@ a.intro-button {
     transition: all 0.5s ease;  
 }
 
-#button-mednansky.active {
+#button-dia.active {
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   -o-transform: scale(1.1);
@@ -307,20 +304,12 @@ a.intro-button {
   -webkit-transform-origin: 50% 50%;
 }
 
-/*#button-mednansky:hover svg, #button-mednansky.active svg, .ui-nosvg #button-mednansky:hover, .ui-nosvg #button-mednansky.active {*/
-/*
-#button-mednansky.active svg, .ui-nosvg #button-mednansky.active {
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
-  transform-origin: 50% 50%;
-  -webkit-transform-origin: 50% 50%;
-}
-*/
-#button-mednansky.active #mednansky-circle {
-  opacity: 1.0;
-  fill: #00f087;
+#button-dia img {
+  position: absolute;
+  width: 150px;
+  height: auto;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 
@@ -376,6 +365,11 @@ a.menu-item.grey {
   -webkit-transform: scale(.001);
   transform: scale(.001);
   z-index: -1;
+}
+
+#app-description {
+  margin-top: 50px;
+  color: #848484;
 }
 
 /*BUTTONS*/
