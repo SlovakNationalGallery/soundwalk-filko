@@ -1,0 +1,50 @@
+[
+   {
+      "audio": "INT_1_PORTRETY.mp3",
+      "title": "Poetry on Space - Cosmos",
+      "order": 1,
+      "color": "white"
+   },
+   {
+      "audio": "INT_2_IZBA S BALKONOM.mp3",
+      "title": "Red - Biology 3.D",
+      "order": 2,
+      "color": "red"
+   },
+   {
+      "audio": "INT_3_VEZICKA.mp3",
+      "title": "Blue - Cosmology 4.D #1",
+      "order": 3,
+      "color": "blue"
+   },
+   {
+      "audio": "INT_4_NAPAJADLO S VRANAMI.mp3",
+      "title": "Blue - Cosmology 4.D #2",
+      "order": 4,
+      "color": "blue"
+   },
+   {
+      "audio": "INT_5_VIANOCE V KNIZNICI.mp3",
+      "title": "White - Ontology 5.D",
+      "order": 5,
+      "color": "white"
+   },
+   {
+      "audio": "INT_6_DETSKA IZBA.mp3",
+      "title": "Ego",
+      "order": 6,
+      "color": "black"
+   },
+   {
+      "audio": "INT_7_POSLEDNA PAMATNICKA.mp3",
+      "title": "Dwelling of Contemporaneity",
+      "order": 7,
+      "color": "gold"
+   },
+   {
+      "audio": "INT_8_MUZ KTORY LUZE.mp3",
+      "title": "Kozmos",
+      "order": 8,
+      "color": "silver"
+   }
+]
