@@ -383,7 +383,7 @@ html .ui-bar-a .ui-btn:hover,
 html .ui-body-a .ui-btn:hover,
 html body .ui-group-theme-a .ui-btn:hover,
 html head + body .ui-btn.ui-btn-a:hover {
-  background:       #fff /*{a-bup-background-color}*/;
+  background:       rgba(255, 255, 255, 0.7) /*{a-bup-background-color}*/;
   border-color:     #d7d8d8 /*{a-bup-border}*/;
   color:          #848484 /*{a-bup-color}*/;
   text-shadow: none !important;
@@ -407,8 +407,7 @@ html .ui-bar-a .ui-btn:active,
 html .ui-body-a .ui-btn:active,
 html body .ui-group-theme-a .ui-btn:active,
 html head + body .ui-btn.ui-btn-a:active {
-  /* background:       #e2f6ed /*{a-bdown-background-color}; */
-  background:       #ffffff /*{a-bdown-background-color}*/;
+  background:       rgba(255, 255, 255, 0.7) /*{a-bdown-background-color}*/;
   border-color:     #d7d8d8 /*{a-bdown-border}*/;
   color:          #111 /*{a-bdown-color}*/;
   text-shadow: none !important;
@@ -437,7 +436,7 @@ html .ui-bar-a .ui-slider-track .ui-btn-active,
 html .ui-body-a .ui-slider-track .ui-btn-active,
 html body .ui-group-theme-a .ui-slider-track .ui-btn-active,
 html body div.ui-slider-track.ui-body-a .ui-btn-active {
-  background-color:     #000000 /*{a-active-background-color}*/;
+  background-color:     rgba(0, 0, 0, 0.3) /*{a-active-background-color}*/;
   border-color:     #d7d8d8 /*{a-active-border}*/;
   color:          #fff /*{a-active-color}*/;
   text-shadow: none !important;
@@ -485,6 +484,9 @@ html head + body .ui-body-a.ui-focus {
   border: 0;
 }
 
+.ui-slider-bg.ui-btn-active {
+  background-color: #000000 !important;
+} 
 
 /* BAR */
 
