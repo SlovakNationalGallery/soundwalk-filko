@@ -223,6 +223,9 @@ div.ui-slider-track
   position: fixed;
   top: 63px;
   z-index: 0;
+  height: 85%;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .track .ui-collapsible-heading {
