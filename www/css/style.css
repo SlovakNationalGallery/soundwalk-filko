@@ -25,9 +25,6 @@ button,
 }
 
 hr {background-color: #b9baba; color: #b9baba; border: 0; height: 1px;}
-h1 {font-size: 64px; margin: 0.2em auto 0em auto;}
-h2 {font-size: 24px; margin: 0 auto 20px;}
-h3 {font-size: 16px; margin: 20px auto 0;}
 
 /* Links */
 .ui-page-theme-a a,
@@ -249,10 +246,6 @@ a.intro-button {
   padding: 0.5em;
 }
 
-/*a.intro-button:hover {color: #000 !important;}*/
-/*a.intro-button:hover .green  {color: #000 !important;}*/
-
-
 .contact-content {
   margin-left: 1.5em;
   /*float: left;*/
@@ -277,7 +270,7 @@ a.intro-button {
   margin-top: -200px;
 }
 
-#button-mednansky {
+#button-dia {
   position: relative;
   z-index: 100;
   display:  block;
@@ -285,47 +278,14 @@ a.intro-button {
   height: 120px;
 }
 
-.ui-nosvg #button-mednansky {
+.ui-nosvg #button-dia {
   background: transparent url(../images/button.png);
   background-size: 100% auto;
 }
 
-#button-mednansky{
-    -webkit-transition: all .5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;  
-}
-
-#button-mednansky.active {
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
-  transform-origin: 50% 50%;
-  -webkit-transform-origin: 50% 50%;
-}
-
-/*#button-mednansky:hover svg, #button-mednansky.active svg, .ui-nosvg #button-mednansky:hover, .ui-nosvg #button-mednansky.active {*/
-/*
-#button-mednansky.active svg, .ui-nosvg #button-mednansky.active {
-  -moz-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
-  transform-origin: 50% 50%;
-  -webkit-transform-origin: 50% 50%;
-}
-*/
-#button-mednansky.active #mednansky-circle {
-  opacity: 1.0;
-  fill: #00f087;
-}
-
-
-#menu-container {
+#dia img {
   position: relative;
+  width: 150px;
 }
 
 #menu {
@@ -348,8 +308,11 @@ a.intro-button {
 
 }
 a.menu-item { 
-  position: absolute; text-align: center; display: block; margin: auto; ;
-  font-size: 32px;
+  /*position: absolute; 
+  text-align: center; 
+  display: block; */
+  margin: auto;
+  font-size: 1em;
   /*color: #66ff99;*/
   text-decoration: none;
   -webkit-transition:all .5s ease;
@@ -368,14 +331,14 @@ a.menu-item.grey {
   color: #848484;
 }
 
-.menu-item#exterier { top: -100px; width: 120px;}
-.menu-item#interier { bottom: -100px; width: 120px;} /*120 + 10 + 70margin*/
-.menu-item#info { top: 50%; left: -70px; width: 30px; text-align: right; line-height: 1px;} 
-.menu-item#contact { top: 50%; right: -70px; width: 30px; text-align: left; line-height: 1px;} /*120 + 20 margin*/
 #menu.schovane { 
   -webkit-transform: scale(.001);
   transform: scale(.001);
   z-index: -1;
+}
+
+#app-description {
+  color: #848484;
 }
 
 /*BUTTONS*/
@@ -580,24 +543,24 @@ html .ui-btn.ui-icon-radio-off:after {
 
 .logo {padding: 0.8em 0.5em; font-size: 18px;}
 .mapka {padding: 1.5em 1.0em 1.0em; position: relative; vertical-align: bottom; text-align: right; color: #fff; }
-/*.ui-nosvg #interier-list-page .mapka {*/
+/*.ui-nosvg #track-list-page .mapka {*/
 .ui-nosvg #exterier-list-page .mapka {
   background: transparent url(../images/park.png) no-repeat; 
   background-size: 100% auto;
 }
-.ui-nosvg #interier-list-page .mapka {
+.ui-nosvg #track-list-page .mapka {
   background: transparent url(../images/kastiel.png) no-repeat; 
   background-size: 100% auto;
 }
-.ui-nosvg #interier-list-page .mapka.poschodie2 {
+.ui-nosvg #track-list-page .mapka.poschodie2 {
   background: transparent url(../images/kastiel2.png) no-repeat; 
   background-size: 100% auto;
 }
-.ui-nosvg #interier-list-page .mapka text {
+.ui-nosvg #track-list-page .mapka text {
   display: none;
 }
 
-.ui-nosvg #exterier-list-page a, .ui-nosvg #interier-list-page a { text-decoration: none !important; }
+.ui-nosvg #exterier-list-page a, .ui-nosvg #track-list-page a { text-decoration: none !important; }
 
 .mapka h1 {position: absolute; bottom: 0.5em; right: 0.5em; font-size: 32px;}
 
@@ -631,7 +594,7 @@ html .ui-btn.ui-icon-radio-off:after {
 .circle {display: none;}
 
 .ui-nosvg #exterier-list-page .circle {border: 2px solid #00f07f;}
-.ui-nosvg #interier-list-page .circle {border: 2px solid #fff;}
+.ui-nosvg #track-list-page .circle {border: 2px solid #fff;}
 .ui-nosvg  .circle {
   display: none; 
   position: absolute; 
@@ -647,21 +610,14 @@ html .ui-btn.ui-icon-radio-off:after {
 }
 .ui-nosvg .circle.active { display: block; }
 
-.ui-nosvg #exterier-list-page .circle#zastavka1 {left: 57.80%; top: 14%;}
-.ui-nosvg #exterier-list-page .circle#zastavka2 {left: 62.18%; top: 22%;}
-.ui-nosvg #exterier-list-page .circle#zastavka3 {left: 53.63%; top: 39.71%;}
-.ui-nosvg #exterier-list-page .circle#zastavka4 {left: 51.63%; top: 66.57%;}
-.ui-nosvg #exterier-list-page .circle#zastavka5 {left: 29.27%; top: 72.28%;}
-.ui-nosvg #exterier-list-page .circle#zastavka6 {left: 29.40%; top: 36.57%;}
-
-.ui-nosvg #interier-list-page .circle#zastavka1 {left: 38.91%; top: 28.57%;}
-.ui-nosvg #interier-list-page .circle#zastavka2 {left: 39.63%; top: 29.14%;}
-.ui-nosvg #interier-list-page .circle#zastavka3 {left: 71.15%; top: 22.85%;}
-.ui-nosvg #interier-list-page .circle#zastavka4 {left: 63.63%; top: 42.29%;}
-.ui-nosvg #interier-list-page .circle#zastavka5 {left: 62.15%; top: 53.14%;}
-.ui-nosvg #interier-list-page .circle#zastavka6 {left: 65.82%; top: 63.14%;}
-.ui-nosvg #interier-list-page .circle#zastavka7 {left: 39.45%; top: 42%;}
-.ui-nosvg #interier-list-page .circle#zastavka8 {left: 42.54%; top: 54.86%;}
+.ui-nosvg #track-list-page .circle#zastavka1 {left: 38.91%; top: 28.57%;}
+.ui-nosvg #track-list-page .circle#zastavka2 {left: 39.63%; top: 29.14%;}
+.ui-nosvg #track-list-page .circle#zastavka3 {left: 71.15%; top: 22.85%;}
+.ui-nosvg #track-list-page .circle#zastavka4 {left: 63.63%; top: 42.29%;}
+.ui-nosvg #track-list-page .circle#zastavka5 {left: 62.15%; top: 53.14%;}
+.ui-nosvg #track-list-page .circle#zastavka6 {left: 65.82%; top: 63.14%;}
+.ui-nosvg #track-list-page .circle#zastavka7 {left: 39.45%; top: 42%;}
+.ui-nosvg #track-list-page .circle#zastavka8 {left: 42.54%; top: 54.86%;}
 
 
 #info-page ul * {white-space:normal;}
