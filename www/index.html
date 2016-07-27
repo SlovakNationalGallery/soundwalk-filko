@@ -37,10 +37,12 @@
       $('.ui-langswitch-en').click( function() {
         LanguageSwitcher.switchLanguage("body", "en");
         $('.ui-langswitch-sk').removeClass('ui-btn-active');
+        createList("filko-en.json", "#interier-list");
       } );
       $('.ui-langswitch-sk').click( function() {
         LanguageSwitcher.switchLanguage("body", "sk");
         $('.ui-langswitch-en').removeClass('ui-btn-active');
+        createList("filko-sk.json", "#interier-list");
       } );
       
       // add active ui class to button to keep state persistent after page transitions
@@ -78,9 +80,6 @@
         $('.ui-btn-left, .ui-btn-right ').css('top','.48em');
       }
 
-      createList("filko-sk.json", "#interier-list");
-      $("#interier-list").collapsibleset();
-
       $("#interier-list-page").bind("pageinit", function(event) {
         $("#interier-list a").removeClass("ui-btn-icon-left");
         $('.ui-nosvg .mapka .circle').removeClass("active");
@@ -110,6 +109,7 @@
     };
 
     function createList(sourceFile, listId) {
+      $(listId).empty();
       $.getJSON(sourceFile, function(data) {         
         $.each(data, function(index, zastavka){
           var listItem = '';
@@ -139,6 +139,7 @@
 
         $("#interier-list a, #exterier-list a").removeClass("ui-btn-icon-left");
       });
+      $(listId).collapsibleset();
     };
 
     function initPlayer(thePlayer) {
