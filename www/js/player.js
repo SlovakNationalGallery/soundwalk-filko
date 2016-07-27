@@ -7,7 +7,7 @@ var Player = {
       Player.media = new Media(
          path,
          function() {
-            console.log('Media file readed succesfully');
+            console.log('Media file read succesfully');
             if (Player.media !== null)
                Player.media.release();
             Player.resetLayout();
@@ -24,8 +24,6 @@ var Player = {
       );
    },
    playPause: function(path) {
-       console.log('test konzoly');
-      console.log('prijmam volanie');
       if (Player.media === null)
          Player.initMedia(path);
 
