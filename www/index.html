@@ -37,12 +37,12 @@
       $('.ui-langswitch-en').click( function() {
         LanguageSwitcher.switchLanguage("body", "en");
         $('.ui-langswitch-sk').removeClass('ui-btn-active');
-        createList("filko-en.json", "#interier-list");
+        createList("filko-en.json", "#track-list");
       } );
       $('.ui-langswitch-sk').click( function() {
         LanguageSwitcher.switchLanguage("body", "sk");
         $('.ui-langswitch-en').removeClass('ui-btn-active');
-        createList("filko-sk.json", "#interier-list");
+        createList("filko-sk.json", "#track-list");
       } );
       
       // add active ui class to button to keep state persistent after page transitions
@@ -80,8 +80,8 @@
         $('.ui-btn-left, .ui-btn-right ').css('top','.48em');
       }
 
-      $("#interier-list-page").bind("pageinit", function(event) {
-        $("#interier-list a").removeClass("ui-btn-icon-left");
+      $("#track-list-page").bind("pageinit", function(event) {
+        $("#track-list a").removeClass("ui-btn-icon-left");
         $('.ui-nosvg .mapka .circle').removeClass("active");
       });
       
@@ -137,7 +137,7 @@
         //     alert('Collapsed');
         // });
 
-        $("#interier-list a, #exterier-list a").removeClass("ui-btn-icon-left");
+        $("#track-list a").removeClass("ui-btn-icon-left");
       });
       $(listId).collapsibleset();
     };
@@ -183,7 +183,7 @@
         Stano Filko <br>
         1937 - 2016
       </h1>
-      <a id="dia" href="#interier-list-page" data-transition="slideup">
+      <a id="dia" href="#track-list-page" data-transition="slideup">
         <img src="images/filko/slide.jpg" alt="filko dia">
       </a>
       <h2 id="app-description" data-i18n="filko-app-description" class="intro-nadpis">
@@ -200,15 +200,15 @@
     </div> <!-- /center-wrapper -->
   </div>   <!-- /page -->
 
-  <!-- PAGE INTERIER LIST -->
-  <div id="interier-list-page" data-role="page">
+  <!-- PAGE TRACK LIST -->
+  <div id="track-list-page" data-role="page">
     <header data-role="header" data-position="fixed" data-tap-toggle="false">
       <h1></h1> <!-- empty header to fill height of header -->
       <a href="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left" data-transition="slidedown">Späť</a>
       <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
     </header>
     <div data-role="main" class="ui-content">
-      <div data-role="collapsible-set"  data-inset="false" id="interier-list"></div>
+      <div data-role="collapsible-set"  data-inset="false" id="track-list"></div>
     </div>
   </div> <!-- /page -->
 
