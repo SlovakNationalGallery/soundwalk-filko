@@ -7,7 +7,6 @@
 
 
 body  * {
-  /*font-family: 'Fugue';*/
   font-weight: normal !important;
 }
 
@@ -17,7 +16,7 @@ select,
 textarea,
 button,
 .ui-btn {
-  font-family: 'Fugue', sans-serif;
+  font-family: 'Neuehaas', sans-serif;
 }
 
 .green {
