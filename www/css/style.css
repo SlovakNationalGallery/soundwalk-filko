@@ -270,6 +270,10 @@ a.intro-button {
   transform: translate(-50%, -50%);
 }
 
+.intro-screen a {
+  text-decoration: none;
+}
+
 .intro-screen #filko-title {
   font-family: Impact, Charcoal, sans-serif;
   font-size: 120px;
