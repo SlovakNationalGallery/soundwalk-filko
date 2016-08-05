@@ -45,13 +45,15 @@ html body .ui-group-theme-a a:visited {
 html .ui-bar-a a:hover,
 html .ui-body-a a:hover,
 html body .ui-group-theme-a a:hover {
-  color: rgba(0, 0, 0, 0.7) /*{a-link-hover}*/;
+  /*color: rgba(0, 0, 0, 0.7); /*{a-link-hover}*/
+  color: #000;
 }
 .ui-page-theme-a a:active,
 html .ui-bar-a a:active,
 html .ui-body-a a:active,
 html body .ui-group-theme-a a:active {
-  color: rgba(0, 0, 0, 0.7) /*{a-link-active}*/;
+  /*color: rgba(0, 0, 0, 0.7); /*{a-link-active}*/
+  color: #000 /*{a-link-active}*/;
 }
 
 .no-text-shadow {
@@ -262,6 +264,12 @@ a.intro-button {
 
 .right { text-align: right; }
 
+.logo {
+  margin-top: 20px;
+  margin-right: 20px;
+  font-size: 18px;
+}
+
 .intro-screen {
   position: absolute;
   width: 260px;
@@ -295,6 +303,19 @@ a.intro-button {
   border-bottom: 1px solid rgba(150, 150, 150, 0.5);
 }
 
+.languageSwitch {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.languageSwitch a {
+  text-decoration: none;
+}
+
+.languageSwitch a:not(.ui-btn-active) {
+  color: rgba(150, 150, 150, 0.5);
+}
+
 .footer {
   position: absolute;
   bottom: 0%;
@@ -318,7 +339,6 @@ a.intro-button {
   height: 30px;
   line-height: 25px;
   text-align: center;
-
   margin-left: 20px;
 }
 
@@ -326,7 +346,7 @@ a.intro-button {
   border-bottom: 1px solid rgba(150, 150, 150, 0.5);
   text-decoration: none;
   letter-spacing: 5px;
-  width: 42px;
+  width: 42px; /*to limit the width of the underlining border*/
   padding-bottom: 3px;
   margin-right: 20px;
 }
@@ -583,7 +603,6 @@ html .ui-btn.ui-icon-radio-off:after {
   background-color:           rgba(53,61,44,.5) /*{global-icon-disc}*/;  
 }
 
-.logo {padding: 0.8em 0.5em; font-size: 18px;}
 .mapka {padding: 1.5em 1.0em 1.0em; position: relative; vertical-align: bottom; text-align: right; color: #fff; }
 /*.ui-nosvg #track-list-page .mapka {*/
 .ui-nosvg #exterier-list-page .mapka {
