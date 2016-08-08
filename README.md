@@ -1,30 +1,24 @@
-SoundWalk Strážky
+SoundWalk Filko
 =================
-homepage: [soundwalk.sng.sk](http://soundwalk.sng.sk/)
 
+SoundWalk is an open source mobile application built using PhoneGap (Apache Cordova). It is written entirely using HTML, CSS, and JavaScript, and runs on numerous platforms (tested for iOS and Android)
 
-SoundWalk Strážky is an open source mobile application built using PhoneGap (Apache Cordova). It is written entirely using HTML, CSS, and JavaScript, and runs on numerous platforms (tested for iOS and Android)
-
-SoundWalk Strážky uses:
+SoundWalk uses:
 
 * PhoneGap: http://www.phonegap.com
 * jQuery Mobile: http://jquerymobile.com/
 
-SoundWalk Strážky is available in the following markets:
-
-* iTunes: https://itunes.apple.com/sk/app/soundwalk-strazky/id757820791?mt=8
-* Google Play: https://play.google.com/store/apps/details?id=sk.sng.strazky
-
-
 ## Installation
-It requires Node.js
+
+Requires [Node.js](https://nodejs.org/)
 
 ```
 sudo npm install -g phonegap
-phonegap  plugin add cordova-plugin-media
-phonegap  plugin add cordova-plugin-inappbrowser
-phonegap  plugins add cordova-plugin-device
-phonegap run ios
+phonegap plugin add cordova-plugin-media
+phonegap plugin add cordova-plugin-inappbrowser
+phonegap plugin add cordova-plugin-device
+phonegap plugin add cordova-plugin-globalization
+phonegap plugin add cordova-plugin-nativestorage
 ```
 
 ## Usage
@@ -37,4 +31,4 @@ phonegap serve
 
 To test on your phone you can download the nifty [PhoneGap Developer mobile app](http://docs.phonegap.com/getting-started/2-install-mobile-app/) and point it to the Server Address you see after starting `phonegap serve`.
 
-![image](http://soundwalk.sng.sk/images/logo/logo_soundwalk.png)
+In case you receive an `Unable to download archive from the server` error in the PhoneGap Developer mobile app, it might help to create a WiFi hotspot on your phone, restart `phonegap serve` and connect again. See [this issue on Github](https://github.com/phonegap/phonegap-app-desktop/issues/360#issuecomment-103969087) for more info.

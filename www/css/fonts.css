@@ -10,6 +10,17 @@
 }
 
 @font-face {
+    font-family: 'Neuehaas';
+    src: url('fonts/neue-haas-unica-pro-regular.eot');
+    src: url('fonts/neue-haas-unica-pro-regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/neue-haas-unica-pro-regular.woff') format('woff'),
+         url('fonts/neue-haas-unica-pro-regular.ttf') format('truetype'),
+         url('fonts/neue-haas-unica-pro-regular.svg#NeueHaasUnicaPro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
   font-family: "Flat-UI-Icons-24";
   font-weight: normal;
   font-style: normal;

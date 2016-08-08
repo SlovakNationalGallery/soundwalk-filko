@@ -1,0 +1,58 @@
+[
+   {
+      "audio": "INT_1_PORTRETY.mp3",
+      "title": "Po\u00e9zia o priestore - kozme",
+      "order": 1,
+      "color": "white",
+      "bgimg": "images/tracks/bg-track-1.svg"
+   },
+   {
+      "audio": "INT_2_IZBA S BALKONOM.mp3",
+      "title": "\u010cerven\u00e1 - Biol\u00f3gia 3.D",
+      "order": 2,
+      "color": "red",
+      "bgimg": "images/tracks/bg-track-2.svg"
+   },
+   {
+      "audio": "INT_3_VEZICKA.mp3",
+      "title": "Modr\u00e1 - Kozmol\u00f3gia 4.D #1",
+      "order": 3,
+      "color": "blue",
+      "bgimg": "images/tracks/bg-track-3.svg"
+   },
+   {
+      "audio": "INT_4_NAPAJADLO S VRANAMI.mp3",
+      "title": "Modr\u00e1 - Kozmol\u00f3gia 4.D #2",
+      "order": 4,
+      "color": "blue",
+      "bgimg": "images/tracks/bg-track-4.svg"
+   },
+   {
+      "audio": "INT_5_VIANOCE V KNIZNICI.mp3",
+      "title": "Biela - Ontol\u00f3gia",
+      "order": 5,
+      "color": "white",
+      "bgimg": "images/tracks/bg-track-5.svg"
+   },
+   {
+      "audio": "INT_6_DETSKA IZBA.mp3",
+      "title": "Ego",
+      "order": 6,
+      "color": "black",
+      "bgimg": "images/tracks/bg-track-6.svg"
+   },
+   {
+      "audio": "INT_7_POSLEDNA PAMATNICKA.mp3",
+      "title": "Obydlie s\u00fa\u010dasnosti",
+      "order": 7,
+      "color": "gold",
+      "bgimg": "images/tracks/bg-track-7.svg"
+   },
+   {
+      "audio": "INT_8_MUZ KTORY LUZE.mp3",
+      "title": "Kozmos",
+      "order": 8,
+      "color": "silver",
+      "bgimg": "images/tracks/bg-track-8.svg"
+   }
+]
