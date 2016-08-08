@@ -7,7 +7,6 @@
 
 
 body  * {
-  /*font-family: 'Fugue';*/
   font-weight: normal !important;
 }
 
@@ -17,7 +16,7 @@ select,
 textarea,
 button,
 .ui-btn {
-  font-family: 'Fugue', sans-serif;
+  font-family: 'Neuehaas', sans-serif;
 }
 
 .green {
@@ -32,26 +31,29 @@ html .ui-bar-a a,
 html .ui-body-a a,
 html body .ui-group-theme-a a {
   /*color: #00f087 /*{a-link-color};*/
-  color: rgba(0, 0, 0, 0.5) /*{a-link-color}*/;
+  color: #000;
   font-weight: normal;
 }
 .ui-page-theme-a a:visited,
 html .ui-bar-a a:visited,
 html .ui-body-a a:visited,
 html body .ui-group-theme-a a:visited {
-    color: rgba(0, 0, 0, 0.5) /*{a-link-visited}*/;
+    /*color: rgba(0, 0, 0, 0.5); /*{a-link-visited}*/
+    color: #000;
 }
 .ui-page-theme-a a:hover,
 html .ui-bar-a a:hover,
 html .ui-body-a a:hover,
 html body .ui-group-theme-a a:hover {
-  color: rgba(0, 0, 0, 0.7) /*{a-link-hover}*/;
+  /*color: rgba(0, 0, 0, 0.7); /*{a-link-hover}*/
+  color: #000;
 }
 .ui-page-theme-a a:active,
 html .ui-bar-a a:active,
 html .ui-body-a a:active,
 html body .ui-group-theme-a a:active {
-  color: rgba(0, 0, 0, 0.7) /*{a-link-active}*/;
+  /*color: rgba(0, 0, 0, 0.7); /*{a-link-active}*/
+  color: #000 /*{a-link-active}*/;
 }
 
 .no-text-shadow {
@@ -262,31 +264,97 @@ a.intro-button {
 
 .right { text-align: right; }
 
+.logo {
+  margin-top: 20px;
+  margin-right: 20px;
+  font-size: 18px;
+}
+
 .intro-screen {
   position: absolute;
-  height: 400px;
-  width: 100%;
-  top: 50%;
-  margin-top: -200px;
+  width: 260px;
+  height: 200px;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-#button-dia {
-  position: relative;
-  z-index: 100;
-  display:  block;
-  width: 120px;
-  height: 120px;
+.intro-screen a {
+  text-decoration: none;
 }
 
-.ui-nosvg #button-dia {
-  background: transparent url(../images/button.png);
-  background-size: 100% auto;
+.intro-screen #filko-title {
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: 120px;
+  margin: 0 auto;
 }
 
-#dia img {
-  position: relative;
-  width: 150px;
+.intro-screen #app-description {
+  letter-spacing: 12px;
+  font-size: 20px;
+  margin-right: -10px;
 }
+
+.rotated {
+  transform: rotate(10deg);
+}
+
+.border-top-bottom {  
+  border-top:    1px solid rgba(150, 150, 150, 0.5);
+  border-bottom: 1px solid rgba(150, 150, 150, 0.5);
+}
+
+.languageSwitch {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.languageSwitch a {
+  text-decoration: none;
+  margin-right: 10px !important;
+}
+
+.languageSwitch a:not(.ui-btn-active) {
+  color: rgba(150, 150, 150, 0.5);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0%;
+  height: 60px;
+  width: 100%;  
+}
+
+.footer .ui-btn {
+  margin: 10px;
+}
+
+.circle-border {
+    border-radius: 50%;
+    border: 1px solid rgba(150, 150, 150, 0.5);
+    text-align: center;
+}
+
+#credits-link {
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  line-height: 25px;
+  text-align: center;
+  margin-left: 20px;
+}
+
+#info-link {
+  border-bottom: 1px solid rgba(150, 150, 150, 0.5);
+  text-decoration: none;
+  letter-spacing: 5px;
+  width: 42px; /*to limit the width of the underlining border*/
+  padding-bottom: 3px;
+  margin-right: 20px;
+}
+
+
+
 
 #menu {
   position: absolute;
@@ -335,10 +403,6 @@ a.menu-item.grey {
   -webkit-transform: scale(.001);
   transform: scale(.001);
   z-index: -1;
-}
-
-#app-description {
-  color: #848484;
 }
 
 /*BUTTONS*/
@@ -541,7 +605,6 @@ html .ui-btn.ui-icon-radio-off:after {
   background-color:           rgba(53,61,44,.5) /*{global-icon-disc}*/;  
 }
 
-.logo {padding: 0.8em 0.5em; font-size: 18px;}
 .mapka {padding: 1.5em 1.0em 1.0em; position: relative; vertical-align: bottom; text-align: right; color: #fff; }
 /*.ui-nosvg #track-list-page .mapka {*/
 .ui-nosvg #exterier-list-page .mapka {
@@ -620,7 +683,7 @@ html .ui-btn.ui-icon-radio-off:after {
 .ui-nosvg #track-list-page .circle#zastavka8 {left: 42.54%; top: 54.86%;}
 
 
-#info-page ul * {white-space:normal;}
+#credits-page ul * {white-space:normal;}
 p.label {color: #888; margin-bottom: 0em; font-size: 0.85em;}
 p.cast { margin-top: 0.2em; }
 

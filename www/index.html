@@ -174,30 +174,22 @@
     </div>
 
     <div class="languageSwitch ui-btn-left" data-role="controlgroup">
-      <a class="ui-langswitch-en" href="index.html" data-role="button" data-inline="true" data-mini="true">EN</a>
-      <a class="ui-langswitch-sk" href="index.html" data-role="button" data-inline="true" data-mini="true">SK</a>
+      <a class="ui-langswitch-sk" href="index.html">SK</a>
+      <a class="ui-langswitch-en" href="index.html">EN</a>
     </div>
 
     <div class="center-wrapper intro-screen">
-      <h1 class="intro-nadpis">
-        Stano Filko <br>
-        1937 - 2016
-      </h1>
-      <a id="dia" href="#track-list-page" data-transition="slideup">
-        <img src="images/filko/slide.jpg" alt="filko dia">
+      <a href="#track-list-page" data-transition="slideup">
+        <div class="rotated border-top-bottom">
+          <h1 id="filko-title">FILKO</h1>
+          <h2 id="app-description" data-i18n="filko-app-description">AUDIO GUIDE</h2>
+        </div>  
       </a>
-      <h2 id="app-description" data-i18n="filko-app-description" class="intro-nadpis">
-        Audio Guide
-      </h2>
-      <div>
-        <a href="#info-page" id="info" class="menu-item ui-btn ui-btn-inline" data-role="button" data-inline="true" data-mini="true" data-transition="slide" data-direction="reverse">
-          <span class="icon-question"></span>
-        </a>
-        <a href="#contact-page" id="contact" class="menu-item ui-btn ui-btn-inline" data-role="button" data-inline="true" data-mini="true" data-transition="slide">
-          <span class="icon-contact"></span>
-        </a>
-      </div>
     </div> <!-- /center-wrapper -->
+    <div class="footer">
+        <a href="#credits-page" id="credits-link" class="circle-border ui-btn-left" data-transition="slide" data-direction="reverse">c</a>
+        <a href="#info-page" id="info-link" class="ui-btn-right" data-transition="slide">Info</a>
+      </div>
   </div>   <!-- /page -->
 
   <!-- PAGE TRACK LIST -->
@@ -213,7 +205,7 @@
   </div> <!-- /page -->
 
   <!-- PAGE INFO -->
-  <div id="info-page" data-role="page">
+  <div id="credits-page" data-role="page">
     <header data-role="header" data-position="fixed" data-tap-toggle="false">
       <a href="#home-page" data-icon="arrow-l" title="Go back" class="back ui-btn-left" data-transition="slide">Späť</a>
       <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
@@ -261,7 +253,7 @@
 
 
   <!-- PAGE CONTACT -->
-  <div id="contact-page" data-role="page">
+  <div id="info-page" data-role="page">
     <header data-role="header" data-position="fixed" data-tap-toggle="false">
       <a href="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left" data-transition="slide" data-direction="reverse" >Späť</a>
       <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
