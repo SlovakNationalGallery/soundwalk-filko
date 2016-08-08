@@ -310,6 +310,7 @@ a.intro-button {
 
 .languageSwitch a {
   text-decoration: none;
+  margin-right: 10px !important;
 }
 
 .languageSwitch a:not(.ui-btn-active) {
