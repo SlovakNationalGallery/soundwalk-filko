@@ -265,8 +265,8 @@ a.intro-button {
 .right { text-align: right; }
 
 .logo {
-  margin-top: 20px;
-  margin-right: 20px;
+  margin-top:   15px !important;
+  margin-right: 15px !important;
   font-size: 18px;
 }
 
