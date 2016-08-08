@@ -1,58 +1,58 @@
 [
    {
-      "audio": "INT_1_PORTRETY.mp3",
+      "audio": "EN-0.mp3",
+      "title": "Cosmos",
+      "order": 0,
+      "color": "silver",
+      "bgimg": "images/tracks/bg-track-0.svg"
+   },
+   {
+      "audio": "EN-1.mp3",
       "title": "Poetry on Space - Cosmos",
       "order": 1,
       "color": "white",
       "bgimg": "images/tracks/bg-track-1.svg"
    },
    {
-      "audio": "INT_2_IZBA S BALKONOM.mp3",
+      "audio": "EN-2.mp3",
       "title": "Red - Biology 3.D",
       "order": 2,
       "color": "red",
       "bgimg": "images/tracks/bg-track-2.svg"
    },
    {
-      "audio": "INT_3_VEZICKA.mp3",
+      "audio": "EN-3.mp3",
       "title": "Blue - Cosmology 4.D #1",
       "order": 3,
       "color": "blue",
       "bgimg": "images/tracks/bg-track-3.svg"
    },
    {
-      "audio": "INT_4_NAPAJADLO S VRANAMI.mp3",
+      "audio": "EN-4.mp3",
       "title": "Blue - Cosmology 4.D #2",
       "order": 4,
       "color": "blue",
       "bgimg": "images/tracks/bg-track-4.svg"
    },
    {
-      "audio": "INT_5_VIANOCE V KNIZNICI.mp3",
+      "audio": "EN-5.mp3",
       "title": "White - Ontology 5.D",
       "order": 5,
       "color": "white",
       "bgimg": "images/tracks/bg-track-5.svg"
    },
    {
-      "audio": "INT_6_DETSKA IZBA.mp3",
+      "audio": "EN-6.mp3",
       "title": "Ego",
       "order": 6,
       "color": "black",
       "bgimg": "images/tracks/bg-track-6.svg"
    },
    {
-      "audio": "INT_7_POSLEDNA PAMATNICKA.mp3",
+      "audio": "EN-7.mp3",
       "title": "Dwelling of Contemporaneity",
       "order": 7,
       "color": "gold",
       "bgimg": "images/tracks/bg-track-7.svg"
-   },
-   {
-      "audio": "INT_8_MUZ KTORY LUZE.mp3",
-      "title": "Kozmos",
-      "order": 8,
-      "color": "silver",
-      "bgimg": "images/tracks/bg-track-8.svg"
    }
 ]
