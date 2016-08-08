@@ -284,8 +284,9 @@ a.intro-button {
 }
 
 .intro-screen #filko-title {
-  font-family: Impact, Charcoal, sans-serif;
+  font-family: Tungsten, Impact, Charcoal, sans-serif;
   font-size: 120px;
+  letter-spacing: 21px;
   margin: 0 auto;
 }
 
