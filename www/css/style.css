@@ -273,7 +273,8 @@ a.intro-button {
 .intro-screen {
   position: absolute;
   width: 260px;
-  top: 50%;
+  height: 200px;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
