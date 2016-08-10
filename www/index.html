@@ -75,7 +75,7 @@
 
     function onDeviceReady() {
       FilkoShoutPlayer.initMediaFiles();
-      $("#dia").click(function (event) {
+      $(".ui-filkotrigger").click(function (event) {
         FilkoShoutPlayer.playNextFilkoShout();  
       });
 
@@ -190,7 +190,7 @@
       <a class="ui-langswitch-en" href="index.html">EN</a>
     </div>
 
-    <div class="center-wrapper intro-screen">
+    <div class="center-wrapper intro-screen ui-filkotrigger">
       <a href="#track-list-page" data-transition="slideup">
         <div class="rotated border-top-bottom">
           <h1 id="filko-title">FILKO</h1>
