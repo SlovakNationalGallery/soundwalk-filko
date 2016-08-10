@@ -1,8 +1,10 @@
 {
 	"en" : {
-		"filko-app-description": "AUDIO GUIDE"
+		"filko-app-description": "AUDIO GUIDE",
+		"filko-back": "Back"
 	},
 	"sk" : {
-		"filko-app-description": "AUDIO SPRIEVODCA"
+		"filko-app-description": "AUDIO SPRIEVODCA",
+		"filko-back": "Späť"
 	}
 }
