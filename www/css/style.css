@@ -25,6 +25,10 @@ button,
 
 hr {background-color: #b9baba; color: #b9baba; border: 0; height: 1px;}
 
+.ui-page {
+  background-color: #FFF;
+}
+
 /* Links */
 .ui-page-theme-a a,
 html .ui-bar-a a,
@@ -163,13 +167,13 @@ div.ui-slider-track
   border-bottom: 0;
   color: #111;
 }
-.ui-content.bg-white{
-  background-color: rgba(255, 255, 255, 0.3);
-}
 .track:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
   background-color: transparent;
 }
 
+.ui-content.bg-white{
+  background-color: rgba(255, 255, 255, 0.3);
+}
 .ui-content.bg-lightbrown{
   background-color: rgba(157,136,136,1);
 }
