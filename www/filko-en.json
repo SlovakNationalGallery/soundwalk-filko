@@ -9,7 +9,7 @@
    },
    {
       "audio": "EN-1.mp3",
-      "title": "Poetry on Space - Cosmos",
+      "title": "Poetry on Space &mdash; Cosmos",
       "order": 1,
       "bgcolor": "lightbrown",
       "indexcolor": "darkbrown",
@@ -17,7 +17,7 @@
    },
    {
       "audio": "EN-2.mp3",
-      "title": "Red - Biology 3.D",
+      "title": "Red &mdash; Biology 3.D",
       "order": 2,
       "bgcolor": "red",
       "indexcolor": "red",
@@ -25,7 +25,7 @@
    },
    {
       "audio": "EN-3.mp3",
-      "title": "Blue - Cosmology 4.D #1",
+      "title": "Blue &mdash; Cosmology 4.D #1",
       "order": 3,
       "bgcolor": "lightblue",
       "indexcolor": "darkblue",
@@ -33,7 +33,7 @@
    },
    {
       "audio": "EN-4.mp3",
-      "title": "Blue - Cosmology 4.D #2",
+      "title": "Blue &mdash; Cosmology 4.D #2",
       "order": 4,
       "bgcolor": "lightblue",
       "indexcolor": "darkblue",
@@ -41,7 +41,7 @@
    },
    {
       "audio": "EN-5.mp3",
-      "title": "White - Ontology 5.D",
+      "title": "White &mdash; Ontology 5.D",
       "order": 5,
       "bgcolor": "grey",
       "indexcolor": "grey",

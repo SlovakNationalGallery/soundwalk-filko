@@ -9,7 +9,7 @@
    },
    {
       "audio": "SK-1.mp3",
-      "title": "Po\u00e9zia o priestore - kozme",
+      "title": "Po\u00e9zia o priestore &mdash; kozme",
       "order": 1,
       "bgcolor": "brown",
       "indexcolor": "darkbrown",
@@ -17,7 +17,7 @@
    },
    {
       "audio": "SK-2.mp3",
-      "title": "\u010cerven\u00e1 - Biol\u00f3gia 3.D",
+      "title": "\u010cerven\u00e1 &mdash; Biol\u00f3gia 3.D",
       "order": 2,
       "bgcolor": "red",
       "indexcolor": "red",
@@ -25,7 +25,7 @@
    },
    {
       "audio": "SK-3.mp3",
-      "title": "Modr\u00e1 - Kozmol\u00f3gia 4.D #1",
+      "title": "Modr\u00e1 &mdash; Kozmol\u00f3gia 4.D #1",
       "order": 3,
       "bgcolor": "lightblue",
       "indexcolor": "darkblue",
@@ -33,7 +33,7 @@
    },
    {
       "audio": "SK-4.mp3",
-      "title": "Modr\u00e1 - Kozmol\u00f3gia 4.D #2",
+      "title": "Modr\u00e1 &mdash; Kozmol\u00f3gia 4.D #2",
       "order": 4,
       "bgcolor": "lightblue",
       "indexcolor": "darkblue",
@@ -41,7 +41,7 @@
    },
    {
       "audio": "SK-5.mp3",
-      "title": "Biela - Ontol\u00f3gia",
+      "title": "Biela &mdash; Ontol\u00f3gia",
       "order": 5,
       "bgcolor": "grey",
       "indexcolor": "grey",
