@@ -38,11 +38,17 @@
         LanguageSwitcher.switchLanguage("body", "en");
         $('.ui-langswitch-sk').removeClass('ui-btn-active');
         createList("filko-en.json", "#track-list");
+        // set app description width
+        $('#app-description').css('letter-spacing', '12px');
+        $('#app-description').css('margin-right', '-10px');
       } );
       $('.ui-langswitch-sk').click( function() {
         LanguageSwitcher.switchLanguage("body", "sk");
         $('.ui-langswitch-en').removeClass('ui-btn-active');
         createList("filko-sk.json", "#track-list");
+        // set app description width
+        $('#app-description').css('letter-spacing', '4px');
+        $('#app-description').css('margin-right', '-5px');
       } );
       
       // add active ui class to button to keep state persistent after page transitions
