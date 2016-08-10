@@ -11,7 +11,7 @@
       "audio": "SK-1.mp3",
       "title": "Po\u00e9zia o priestore &mdash; kozme",
       "order": 1,
-      "bgcolor": "brown",
+      "bgcolor": "lightbrown",
       "indexcolor": "darkbrown",
       "bgimg": "images/tracks/bg-1.svg"
    },
@@ -60,7 +60,7 @@
       "title": "Obydlie s\u00fa\u010dasnosti",
       "order": 7,
       "bgcolor": "gold",
-      "indexcolor": "white",
+      "indexcolor": "gold",
       "bgimg": "images/tracks/bg-7.svg"
    }
 ]
