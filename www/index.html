@@ -113,9 +113,9 @@
       $.getJSON(sourceFile, function(data) {         
         $.each(data, function(index, zastavka){
           var listItem = '';
-          listItem += '<div data-role="collapsible" class="track '+zastavka.color+'" rel="'+zastavka.audio+'">' + 
+          listItem += '<div data-role="collapsible" class="track" rel="'+zastavka.audio+'" data-bgcolor="'+zastavka.bgcolor+'">' + 
           '<img class="track-bg" src="'+zastavka.bgimg+'" alt=""/>'+
-          '<h3>'+zastavka.title+'<span class="index '+zastavka.color+'">'+(index)+'</span></h3>' +
+          '<h3>'+zastavka.title+'<span class="index '+zastavka.indexcolor+'">'+(index)+'</span></h3>' +
           '<div class="center-wrapper negative-margin">'+
           '<a href="#" class="player-play no-text-shadow"><span class="icon-play"></span></a>'+
           '<div>'+
@@ -131,11 +131,17 @@
         // $(listId + " .time-slider").trigger('create'); //pozor!
         $(listId).collapsibleset( "refresh" );
 
-        // $(listId).on('collapsibleexpand', function () {
-        //     alert('Expanded');
-        // }).on('collapsiblecollapse', function () {
-        //     alert('Collapsed');
-        // });
+        $(listId).on('collapsibleexpand', function (event, ui) {
+            // console.log('Expanded');
+            var bgColor = $(event.target).attr('data-bgcolor');
+            $(listId).parent().addClass('bg-'+bgColor);
+        }).on('collapsiblecollapse', function (event, ui) {
+            console.log('Collapsed');
+            // console.log(event);
+            console.log(event.target);
+            var bgColor = $(event.target).attr('data-bgcolor');
+            $(listId).parent().removeClass('bg-'+bgColor)
+        });
 
         $("#track-list a").removeClass("ui-btn-icon-left");
       });

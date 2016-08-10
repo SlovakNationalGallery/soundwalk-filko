@@ -3,56 +3,64 @@
       "audio": "SK-0.mp3",
       "title": "Kozmos <i>(Átrium)</i>",
       "order": 0,
-      "color": "silver",
-      "bgimg": "images/tracks/bg-track-0.svg"
+      "bgcolor": "darkblue",
+      "indexcolor": "lightblue",
+      "bgimg": "images/tracks/bg-0.svg"
    },
    {
       "audio": "SK-1.mp3",
       "title": "Po\u00e9zia o priestore - kozme",
       "order": 1,
-      "color": "white",
-      "bgimg": "images/tracks/bg-track-1.svg"
+      "bgcolor": "brown",
+      "indexcolor": "darkbrown",
+      "bgimg": "images/tracks/bg-1.svg"
    },
    {
       "audio": "SK-2.mp3",
       "title": "\u010cerven\u00e1 - Biol\u00f3gia 3.D",
       "order": 2,
-      "color": "red",
-      "bgimg": "images/tracks/bg-track-2.svg"
+      "bgcolor": "red",
+      "indexcolor": "red",
+      "bgimg": "images/tracks/bg-2.svg"
    },
    {
       "audio": "SK-3.mp3",
       "title": "Modr\u00e1 - Kozmol\u00f3gia 4.D #1",
       "order": 3,
-      "color": "blue",
-      "bgimg": "images/tracks/bg-track-3.svg"
+      "bgcolor": "lightblue",
+      "indexcolor": "darkblue",
+      "bgimg": "images/tracks/bg-3.svg"
    },
    {
       "audio": "SK-4.mp3",
       "title": "Modr\u00e1 - Kozmol\u00f3gia 4.D #2",
       "order": 4,
-      "color": "blue",
-      "bgimg": "images/tracks/bg-track-4.svg"
+      "bgcolor": "lightblue",
+      "indexcolor": "darkblue",
+      "bgimg": "images/tracks/bg-4.svg"
    },
    {
       "audio": "SK-5.mp3",
       "title": "Biela - Ontol\u00f3gia",
       "order": 5,
-      "color": "white",
-      "bgimg": "images/tracks/bg-track-5.svg"
+      "bgcolor": "grey",
+      "indexcolor": "grey",
+      "bgimg": "images/tracks/bg-5.svg"
    },
    {
       "audio": "SK-6.mp3",
       "title": "Ego",
       "order": 6,
-      "color": "black",
-      "bgimg": "images/tracks/bg-track-6.svg"
+      "bgcolor": "black",
+      "indexcolor": "black",
+      "bgimg": "images/tracks/bg-6.svg"
    },
    {
       "audio": "SK-7.mp3",
       "title": "Obydlie s\u00fa\u010dasnosti",
       "order": 7,
-      "color": "gold",
-      "bgimg": "images/tracks/bg-track-7.svg"
+      "bgcolor": "gold",
+      "indexcolor": "white",
+      "bgimg": "images/tracks/bg-7.svg"
    }
 ]

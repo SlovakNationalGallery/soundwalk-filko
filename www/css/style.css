@@ -163,28 +163,35 @@ div.ui-slider-track
   border-bottom: 0;
   color: #111;
 }
+.ui-content.bg-white{
+  background-color: rgba(255, 255, 255, 0.3);
+}
 .track:not(.ui-collapsible-collapsed) .ui-collapsible-content, .track:not(.ui-collapsible-collapsed) .ui-collapsible-heading a.ui-btn  {
   background-color: transparent;
 }
 
-.track.white:not(.ui-collapsible-collapsed) {
-  background-color: rgba(255, 255, 255, 0.3);
+.ui-content.bg-lightbrown{
+  background-color: rgba(157,136,136,1); // final
 }
-.track.red:not(.ui-collapsible-collapsed) {
-  background-color: rgba(248, 0, 48, 0.3);
+.ui-content.bg-red{
+  background-color: rgba(248,166,178,1); // final
 }
-
-.track.blue:not(.ui-collapsible-collapsed) {
-  background-color: rgba(24, 95, 172, 0.3);
+.ui-content.bg-lightblue{
+  background-color: rgba(204,225,240,1); // final
 }
-
-.track.black:not(.ui-collapsible-collapsed) {
+.ui-content.bg-darkblue{
+  background-color: rgba(27,117,187,1); // final
+}
+.ui-content.bg-grey{
+  background-color: rgba(220,225,227,1); // final
+}
+.ui-content.bg-black{
   background-color: rgba(0, 0, 0, 0.3);
 }
-.track.gold:not(.ui-collapsible-collapsed) {
-  background-color: rgba(255, 215, 0, 0.3);
+.ui-content.bg-gold{
+  background-color: rgba(155,130, 50, 1); // final
 }
-.track.silver:not(.ui-collapsible-collapsed) {
+.ui-content.bg-silver{
   background-color: rgba(192, 192, 192, 0.3);
 }
    
@@ -202,17 +209,26 @@ div.ui-slider-track
 .track .index.white {
   color: rgba(200, 200, 200, 1);
 }
+.track .index.lightbrown {
+  color: rgba(157,136,136,1); // final
+}
+.track .index.darkbrown {
+  color: #3C1212; // final
+}
 .track .index.red {
   color: rgba(248, 0, 48, 1);
 }
-.track .index.blue {
-  color: rgba(24, 95, 172, 1);
+.track .index.lightblue {
+  color: rgba(204,225,240,1); // final
+}
+.track .index.darkblue {
+  color: rgba(27,117,187,1); // final
 }
 .track .index.black {
   color: rgba(0, 0, 0, 1);
 }
 .track .index.gold {
-  color: rgba(255, 215, 0, 1);
+  color: rgba(155,130, 50, 1); // final
 }
 .track .index.silver {
   color: rgba(192, 192, 192, 1);
