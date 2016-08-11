@@ -38,11 +38,17 @@
         LanguageSwitcher.switchLanguage("body", "en");
         $('.ui-langswitch-sk').removeClass('ui-btn-active');
         createList("filko-en.json", "#track-list");
+        // set app description width
+        $('#app-description').css('letter-spacing', '12px');
+        $('#app-description').css('margin-right', '-10px');
       } );
       $('.ui-langswitch-sk').click( function() {
         LanguageSwitcher.switchLanguage("body", "sk");
         $('.ui-langswitch-en').removeClass('ui-btn-active');
         createList("filko-sk.json", "#track-list");
+        // set app description width
+        $('#app-description').css('letter-spacing', '4px');
+        $('#app-description').css('margin-right', '-5px');
       } );
       
       // add active ui class to button to keep state persistent after page transitions
@@ -69,7 +75,7 @@
 
     function onDeviceReady() {
       FilkoShoutPlayer.initMediaFiles();
-      $("#dia").click(function (event) {
+      $(".ui-filkotrigger").click(function (event) {
         FilkoShoutPlayer.playNextFilkoShout();  
       });
 
@@ -113,9 +119,9 @@
       $.getJSON(sourceFile, function(data) {         
         $.each(data, function(index, zastavka){
           var listItem = '';
-          listItem += '<div data-role="collapsible" class="track '+zastavka.color+'" rel="'+zastavka.audio+'">' + 
+          listItem += '<div data-role="collapsible" class="track" rel="'+zastavka.audio+'" data-bgcolor="'+zastavka.bgcolor+'">' + 
           '<img class="track-bg" src="'+zastavka.bgimg+'" alt=""/>'+
-          '<h3>'+zastavka.title+'<span class="index '+zastavka.color+'">'+(index)+'</span></h3>' +
+          '<h3>'+zastavka.title+'<span class="index '+zastavka.indexcolor+'">'+(index)+'</span></h3>' +
           '<div class="center-wrapper negative-margin">'+
           '<a href="#" class="player-play no-text-shadow"><span class="icon-play"></span></a>'+
           '<div>'+
@@ -131,11 +137,15 @@
         // $(listId + " .time-slider").trigger('create'); //pozor!
         $(listId).collapsibleset( "refresh" );
 
-        // $(listId).on('collapsibleexpand', function () {
-        //     alert('Expanded');
-        // }).on('collapsiblecollapse', function () {
-        //     alert('Collapsed');
-        // });
+        $(listId).on('collapsibleexpand', function (event, ui) {
+            // console.log('Expanded');
+            var bgColor = $(event.target).attr('data-bgcolor');
+            $(listId).parent().addClass('bg-'+bgColor);
+        }).on('collapsiblecollapse', function (event, ui) {
+            // console.log('Collapsed');
+            var bgColor = $(event.target).attr('data-bgcolor');
+            $(listId).parent().removeClass('bg-'+bgColor)
+        });
 
         $("#track-list a").removeClass("ui-btn-icon-left");
       });
@@ -178,7 +188,7 @@
       <a class="ui-langswitch-en" href="index.html">EN</a>
     </div>
 
-    <div class="center-wrapper intro-screen">
+    <div class="center-wrapper intro-screen ui-filkotrigger">
       <a href="#track-list-page" data-transition="slideup">
         <div class="rotated border-top-bottom">
           <h1 id="filko-title">FILKO</h1>
@@ -196,7 +206,7 @@
   <div id="track-list-page" data-role="page">
     <header data-role="header" data-position="fixed" data-tap-toggle="false">
       <h1></h1> <!-- empty header to fill height of header -->
-      <a href="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left" data-transition="slidedown">Späť</a>
+      <a href="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left" data-transition="slidedown" data-i18n="filko-back">Späť</a>
       <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
     </header>
     <div data-role="main" class="ui-content">
@@ -207,7 +217,7 @@
   <!-- PAGE INFO -->
   <div id="credits-page" data-role="page">
     <header data-role="header" data-position="fixed" data-tap-toggle="false">
-      <a href="#home-page" data-icon="arrow-l" title="Go back" class="back ui-btn-left" data-transition="slide">Späť</a>
+      <a href="#home-page" data-icon="arrow-l" title="Go back" class="back ui-btn-left" data-transition="slide" data-i18n="filko-back">Späť</a>
       <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
       <h1>&nbsp;</h1>
     </header>
@@ -255,7 +265,7 @@
   <!-- PAGE CONTACT -->
   <div id="info-page" data-role="page">
     <header data-role="header" data-position="fixed" data-tap-toggle="false">
-      <a href="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left" data-transition="slide" data-direction="reverse" >Späť</a>
+      <a href="#" data-icon="arrow-l"  data-rel="back" title="Go back" class="back ui-btn-left" data-transition="slide" data-direction="reverse"  data-i18n="filko-back">Späť</a>
       <div class="logo ui-btn-right"><span class="icon-sng"></span></div>
       <h1>&nbsp;</h1>
     </header>

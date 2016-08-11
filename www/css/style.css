@@ -25,6 +25,10 @@ button,
 
 hr {background-color: #b9baba; color: #b9baba; border: 0; height: 1px;}
 
+.ui-page {
+  background-color: #FFF;
+}
+
 /* Links */
 .ui-page-theme-a a,
 html .ui-bar-a a,
@@ -167,24 +171,31 @@ div.ui-slider-track
   background-color: transparent;
 }
 
-.track.white:not(.ui-collapsible-collapsed) {
+.ui-content.bg-white{
   background-color: rgba(255, 255, 255, 0.3);
 }
-.track.red:not(.ui-collapsible-collapsed) {
-  background-color: rgba(248, 0, 48, 0.3);
+.ui-content.bg-lightbrown{
+  background-color: rgba(157,136,136,1);
 }
-
-.track.blue:not(.ui-collapsible-collapsed) {
-  background-color: rgba(24, 95, 172, 0.3);
+.ui-content.bg-red{
+  background-color: rgba(248,166,178,1);
 }
-
-.track.black:not(.ui-collapsible-collapsed) {
-  background-color: rgba(0, 0, 0, 0.3);
+.ui-content.bg-lightblue{
+  background-color: rgba(204,225,240,1);
 }
-.track.gold:not(.ui-collapsible-collapsed) {
-  background-color: rgba(255, 215, 0, 0.3);
+.ui-content.bg-darkblue{
+  background-color: rgba(27,117,187,1);
 }
-.track.silver:not(.ui-collapsible-collapsed) {
+.ui-content.bg-grey{
+  background-color: rgba(220,225,227,1);
+}
+.ui-content.bg-black{
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.ui-content.bg-gold{
+  background-color: rgba(210,180,0, 0.7);
+}
+.ui-content.bg-silver{
   background-color: rgba(192, 192, 192, 0.3);
 }
    
@@ -202,17 +213,26 @@ div.ui-slider-track
 .track .index.white {
   color: rgba(200, 200, 200, 1);
 }
+.track .index.lightbrown {
+  color: rgba(157,136,136,1);
+}
+.track .index.darkbrown {
+  color: #3C1212;
+}
 .track .index.red {
   color: rgba(248, 0, 48, 1);
 }
-.track .index.blue {
-  color: rgba(24, 95, 172, 1);
+.track .index.lightblue {
+  color: rgba(140,170,200,1);
+}
+.track .index.darkblue {
+  color: rgba(27,117,187,1);
 }
 .track .index.black {
   color: rgba(0, 0, 0, 1);
 }
 .track .index.gold {
-  color: rgba(255, 215, 0, 1);
+  color: rgba(155,130, 50, 1);
 }
 .track .index.silver {
   color: rgba(192, 192, 192, 1);
@@ -265,16 +285,16 @@ a.intro-button {
 .right { text-align: right; }
 
 .logo {
-  margin-top: 20px;
-  margin-right: 20px;
+  margin-top:   15px !important;
+  margin-right: 15px !important;
   font-size: 18px;
 }
 
 .intro-screen {
   position: absolute;
   width: 260px;
-  height: 200px;
-  top: 45%;
+  height: 240px;
+  top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -284,8 +304,9 @@ a.intro-button {
 }
 
 .intro-screen #filko-title {
-  font-family: Impact, Charcoal, sans-serif;
+  font-family: Tungsten, Impact, Charcoal, sans-serif;
   font-size: 120px;
+  letter-spacing: 21px;
   margin: 0 auto;
 }
 
