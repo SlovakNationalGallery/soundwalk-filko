@@ -1,10 +1,34 @@
 {
 	"en" : {
-		"filko-app-description": "AUDIO GUIDE",
-		"filko-back": "Back"
+		"filko-home-description": "AUDIO GUIDE",
+		"filko-ui-back": "Back",
+		"filko-credits-title-credits": "STANO FILKO: POETRY ON SPACE – COSMOS",
+		"filko-credits-title-exhibition": "Exhibition",
+		"filko-credits-title-application": "Mobile App",
+		"filko-info-link-map": "view map",
+		"filko-info-link-call": "call",
+		"filko-info-title-visit": "Visit us",
+		"filko-info-title-about": "About the Exhibition",
+		"filko-info-contact-opening": "Monday: closed <br>Tuesday – Wednesday: 10.00 – 18.00 <br>Thursday: 12.00 – 20.00 <br>Friday – Sunday: 10.00 – 18.00",
+		"filko-info-contact-dates": "24 June 2016 &mdash; 25 September 2016",
+		"filko-info-contact-name": "Slovak National Gallery",
+		"filko-info-link-sng-href": "http://www.sng.sk/en/exhibitions/729_stano-filko-poetry-on-space-cosmos",
+		"filko-info-section-about": "<p>Stano Filko was an intermedia and conceptual artist, who caused an upheaval in a relatively conservative cultural environment in Slovakia in the mid 1960s. He followed the trends and art fields forming at that time around the world - environment, spatial installation art, land (earth)-art, conceptual art, new media art, video art - and reflected them in his own original way. Filko progressed in several directions simultaneously, while incorporating a wide register of themes and inspirations. Closest to his heart were the most universal and abstract themes and phenomena - those which resisted materialisation, such as infinite time and space or immaterial existence.</p><p>All works by Stano Filko are part of one system and universe. He collected and organised ideas, concepts, knowledge, symbols and facts into structures, according to the basic colours of 'System SF' - red, blue, white – and later the symbols of the three dimensions (3rd, 4th, 5th) along with the black color of EGO. The multi-media exhibition Poézia o priestore – kozme / Poetry on Space – Cosmos represents Filko’s work and thinking in the 1960s and 1970s, extended by newer work and layers of artistic interventions. More than 150 artworks will be presented at the exhibition (over a third of these works were never exhibited before) - sculptures, objects, environments, sound-art, film, installations of the artist’s slides and two archive binders containing approximately 120 works.</p>"
 	},
 	"sk" : {
-		"filko-app-description": "AUDIO SPRIEVODCA",
-		"filko-back": "Späť"
+		"filko-home-description": "AUDIOSPRIEVODCA",
+		"filko-ui-back": "Späť",
+		"filko-credits-title-credits": "STANO FILKO: POÉZIA O PRIESTORE – KOZME",
+		"filko-credits-title-exhibition": "Výstava",
+		"filko-credits-title-application": "Aplikácia",
+		"filko-info-link-map": "zobraziť mapu",
+		"filko-info-link-call": "zavolať",
+		"filko-info-title-visit": "Navštívte nás",
+		"filko-info-title-about": "O výstave",
+		"filko-info-contact-opening": "Pondelok: zatvorené <br>Utorok – Streda: 10.00 – 18.00 <br> Stvrtok: 12.00 – 20.00 <br> Piatok – Nedeľa: 10.00 – 18.00",
+		"filko-info-contact-dates": "24. júna 2016 &mdash; 25. septembra 2016",
+		"filko-info-contact-name": "Slovenská národná galéria",
+		"filko-info-link-sng-href": "http://www.sng.sk/sk/vystavy/729_stano-filko-poezia-o-priestore-kozme",
+		"filko-info-section-about": "<p>Stano Filko bol intermediálny a konceptuálny umelec, ktorý v polovici 60. rokov spôsobil v pomerne konzervatívnom kultúrnom prostredí na Slovensku zásadný prevrat. Svojsky a originálne nadviazal na vtedy vznikajúce umelecké smery vo svete - environment, umenie priestorovej inštalácie, land (earth)-art, konceptuálne umenie, umenie nových médií. Do svojho diela vťahoval mimoriadne široký okruh tém a podnetov a postupoval akoby vo viacerých smeroch naraz. Zvlášť blízke mu boli tie najvšeobecnejšie a najabstraktnejšie témy a fenomény, ktoré nemožno materiálne uchopiť – nekonečný priestor a čas, nehmotné bytie.</p><p>Všetky diela Stana Filka sú súčasťou jedného systému, univerza, celoživotného projektu. Autor usporadúval javy, idey, vedomosti, pojmy a fakty do štruktúr podľa základných farieb 'Systému SF' - červená, modrá, biela - neskôr symboly troch dimenzií 3.4.5. spolu s čiernou farbou EGA. Multimediálna výstava Poézia o priestore - kozme predstavuje tvorbu a myslenie Stana Filka v 60. a 70. rokoch 20. storočia, obohatenú o novšie diela. Prezentuje viac než 150 diel (viac ako tretina z nich má výstavnú premiéru) - sochy, objekty, environmenty, zvukové a fotografické inštalácie, film ai. - a tiež dva archívne šánony so skicami, kresbami či text-artom.</p>"
 	}
 }
