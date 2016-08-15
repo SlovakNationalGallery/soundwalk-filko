@@ -7,6 +7,7 @@ SoundWalk uses:
 
 * PhoneGap: http://www.phonegap.com
 * jQuery Mobile: http://jquerymobile.com/
+* jQuery.i18n https://github.com/wikimedia/jquery.i18n
 
 ## Installation
 
