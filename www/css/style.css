@@ -244,6 +244,7 @@ div.ui-slider-track
   z-index: 0;
   height: 85%;
   left: 50%;
+  -webkit-transform: translate(-50%);
   transform: translate(-50%);
 }
 
@@ -296,6 +297,7 @@ a.intro-button {
   height: 240px;
   top: 48%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -317,6 +319,7 @@ a.intro-button {
 }
 
 .rotated {
+  -webkit-transform: rotate(10deg);
   transform: rotate(10deg);
 }
 
