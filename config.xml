@@ -59,4 +59,20 @@
         <icon src="res/ios/Icon-Small-50.png" width="50" height="50" />
         <icon src="res/ios/Icon-Small-50@2x.png" width="100" height="100" />
     </platform>
+
+    <platform name="android">
+        <!--
+            ldpi    : 36x36 px
+            mdpi    : 48x48 px
+            hdpi    : 72x72 px
+            xhdpi   : 96x96 px
+            xxhdpi  : 144x144 px
+            xxxhdpi : 192x192 px
+        -->
+        <icon src="res/android/48.png" density="mdpi" />
+        <icon src="res/android/72.png" density="hdpi" />
+        <icon src="res/android/96.png" density="xhdpi" />
+        <icon src="res/android/144.png" density="xxhdpi" />
+        <icon src="res/android/192.png" density="xxxhdpi" />
+    </platform>    
 </widget>
