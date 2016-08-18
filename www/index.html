@@ -74,6 +74,7 @@
     is_paused = false;
 
     function onDeviceReady() {
+      StatusBar.hide();
       FilkoShoutPlayer.initMediaFiles();
       $(".ui-filkotrigger").click(function (event) {
         FilkoShoutPlayer.playNextFilkoShout();  

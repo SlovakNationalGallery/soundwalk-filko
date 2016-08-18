@@ -20,6 +20,7 @@ phonegap plugin add cordova-plugin-inappbrowser
 phonegap plugin add cordova-plugin-device
 phonegap plugin add cordova-plugin-globalization
 phonegap plugin add cordova-plugin-nativestorage
+phonegap plugin add cordova-plugin-statusbar
 ```
 
 ## Usage
