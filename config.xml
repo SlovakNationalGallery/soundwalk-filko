@@ -14,9 +14,12 @@
     <!-- disable scroll out of boundaries -->
     <preference name="DisallowOverscroll" value="true" />
 
-    <!-- disable splashscreen -->
-    <preference name="SplashScreenDelay" value="0" />
-    <preference name="FadeSplashScreenDuration" value="0" />
+    <!-- splashscreen settings -->
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="1000" />
+    <preference name="FadeSplashScreen" value="true"/>
+    <preference name="FadeSplashScreenDuration" value="100" />
+    <preference name="ShowSplashScreenSpinner" value="false"/>
 
     <preference name="target-device" value="universal" />
     <preference name="prerendered-icon" value="true" />
@@ -58,6 +61,7 @@
 
         <icon src="res/ios/Icon-Small-50.png" width="50" height="50" />
         <icon src="res/ios/Icon-Small-50@2x.png" width="100" height="100" />
+
     </platform>
 
     <platform name="android">
@@ -74,5 +78,6 @@
         <icon src="res/android/96.png" density="xhdpi" />
         <icon src="res/android/144.png" density="xxhdpi" />
         <icon src="res/android/192.png" density="xxxhdpi" />
+
     </platform>    
 </widget>
