@@ -75,6 +75,15 @@
 
     function onDeviceReady() {
       StatusBar.hide();
+
+      // Initialize Mixpanel event tracking using token from .gitignore'd json file
+      // window.mixpanel is not yet defined on document.ready
+      $.getJSON('secrets.json', function(data) {
+        var mpToken = data.mixpanelToken;
+        window.mixpanel.init(mpToken);
+        window.mixpanel.track("appOpened");
+      });
+
       FilkoShoutPlayer.initMediaFiles();
       $(".ui-filkotrigger").click(function (event) {
         FilkoShoutPlayer.playNextFilkoShout();  

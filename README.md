@@ -25,6 +25,7 @@ phonegap plugin add cordova-plugin-globalization
 phonegap plugin add cordova-plugin-nativestorage
 phonegap plugin add cordova-plugin-statusbar
 phonegap plugin add cordova-plugin-splashscreen
+phonegap plugin add cordova-plugin-mixpanel
 ```
 
 ## Usage
@@ -38,6 +39,15 @@ phonegap serve
 To test on your phone you can download the nifty [PhoneGap Developer mobile app](http://docs.phonegap.com/getting-started/2-install-mobile-app/) and point it to the Server Address you see after starting `phonegap serve`.
 
 In case you receive an `Unable to download archive from the server` error in the PhoneGap Developer mobile app, it might help to create a WiFi hotspot on your phone, join this network on your computer, restart `phonegap serve` and connect again. See [this issue on Github](https://github.com/phonegap/phonegap-app-desktop/issues/360#issuecomment-103969087) for details.
+
+### Event tracking with Mixpanel
+
+We use [Mixpanel](https://mixpanel.com) to track basic usage of the app. The unique Mixpanel token is stored in `www/secrets.json`, which looks like:
+```
+{
+    "mixpanelToken":"YOUR_TOKEN_HERE"
+}
+```
 
 ## Building Native Apps
 
