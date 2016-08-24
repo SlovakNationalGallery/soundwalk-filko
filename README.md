@@ -40,6 +40,15 @@ To test on your phone you can download the nifty [PhoneGap Developer mobile app]
 
 In case you receive an `Unable to download archive from the server` error in the PhoneGap Developer mobile app, it might help to create a WiFi hotspot on your phone, join this network on your computer, restart `phonegap serve` and connect again. See [this issue on Github](https://github.com/phonegap/phonegap-app-desktop/issues/360#issuecomment-103969087) for details.
 
+### Event tracking with Mixpanel
+
+We use [Mixpanel](https://mixpanel.com) to track basic usage of the app. The unique Mixpanel token is stored in `www/secrets.json`, which looks like:
+```
+{
+    "mixpanelToken":"YOUR_TOKEN_HERE"
+}
+```
+
 ## Building Native Apps
 
 More info on how to use Cordova to build native apps for various platform can be found on the [Cordova CLI documentation](https://cordova.apache.org/docs/en/latest/guide/cli). Since this app is already structured as a cordova app, you can skip straight to [adding platforms](https://cordova.apache.org/docs/en/latest/guide/cli/#add-platforms).
