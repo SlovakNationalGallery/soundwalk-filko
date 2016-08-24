@@ -1,15 +1,17 @@
-SoundWalk Filko
+Filko Audio Guide
 =================
 
 ![image](filko.png)
 
-SoundWalk is an open source mobile application built using PhoneGap (Apache Cordova). It is written entirely using HTML, CSS, and JavaScript, and runs on numerous platforms (tested for iOS and Android)
+This Audio Guide accompanies the ['STANO FILKO: POETRY ON SPACE – COSMOS'](http://www.sng.sk/en/exhibitions/729_stano-filko-poetry-on-space-cosmos) exhibition at the Slovak National Gallery, 24 June - 25 September 2016.
+It is an open source mobile application built using PhoneGap (Apache Cordova), written entirely in HTML, CSS and JavaScript, and runs on numerous platforms (tested for iOS and Android).
 
-SoundWalk uses:
+The app uses:
 
 * PhoneGap: http://www.phonegap.com
 * jQuery Mobile: http://jquerymobile.com/
 * jQuery.i18n https://github.com/wikimedia/jquery.i18n
+* Mixpanel: https://mixpanel.com
 
 ## Installation
 
