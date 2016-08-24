@@ -25,6 +25,7 @@ phonegap plugin add cordova-plugin-globalization
 phonegap plugin add cordova-plugin-nativestorage
 phonegap plugin add cordova-plugin-statusbar
 phonegap plugin add cordova-plugin-splashscreen
+phonegap plugin add cordova-plugin-mixpanel
 ```
 
 ## Usage
