@@ -76,10 +76,15 @@
     function onDeviceReady() {
       StatusBar.hide();
 
-      // Initialize Mixpanel event tracking using token from .gitignore'd json file
-      // window.mixpanel is not yet defined on document.ready
-      $.getJSON('secrets.json', function(data) {
-        var mpToken = data.mixpanelToken;
+      // Initialize Mixpanel event tracking using relevant token from .gitignore'd json file
+      // window.mixpanel is not yet defined on document.ready, so init in onDeviceReady
+      $.getJSON('secrets.json', function(data) {        
+        var developmentHost = "192."
+        if (window.location.hostname.toLowerCase().search(developmentHost) < 0) {
+          var mpToken = data.mixpanelProductionToken;
+        } else {
+          var mpToken = data.mixpanelDevelopmentToken;
+        }
         window.mixpanel.init(mpToken);
         window.mixpanel.track("appOpened");
       });
