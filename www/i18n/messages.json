@@ -1,6 +1,6 @@
 {
 	"en" : {
-		"home-description": "AUDIO GUIDE",
+		"home-title-img-src": "images/filko-en.png",
 		"ui-back": "Back",
 		"credits-title-credits": "STANO FILKO: POETRY ON SPACE – COSMOS",
 		"credits-title-exhibition": "Exhibition",
@@ -31,7 +31,7 @@
 		"info-section-about": "<p>Stano Filko was an intermedia and conceptual artist, who caused an upheaval in a relatively conservative cultural environment in Slovakia in the mid 1960s. He followed the trends and art fields forming at that time around the world - environment, spatial installation art, land (earth)-art, conceptual art, new media art, video art - and reflected them in his own original way. Filko progressed in several directions simultaneously, while incorporating a wide register of themes and inspirations. Closest to his heart were the most universal and abstract themes and phenomena - those which resisted materialisation, such as infinite time and space or immaterial existence.</p><p>All works by Stano Filko are part of one system and universe. He collected and organised ideas, concepts, knowledge, symbols and facts into structures, according to the basic colours of 'System SF' - red, blue, white – and later the symbols of the three dimensions (3rd, 4th, 5th) along with the black color of EGO. The multi-media exhibition Poézia o priestore – kozme / Poetry on Space – Cosmos represents Filko’s work and thinking in the 1960s and 1970s, extended by newer work and layers of artistic interventions. More than 150 artworks will be presented at the exhibition (over a third of these works were never exhibited before) - sculptures, objects, environments, sound-art, film, installations of the artist’s slides and two archive binders containing approximately 120 works.</p>"
 	},
 	"sk" : {
-		"home-description": "AUDIOSPRIEVODCA",
+		"home-title-img-src": "images/filko-sk.png",
 		"ui-back": "Späť",
 		"credits-title-credits": "STANO FILKO: POÉZIA O PRIESTORE – KOZME",
 		"credits-title-exhibition": "Výstava",

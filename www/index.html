@@ -75,7 +75,7 @@
 
     function onDeviceReady() {
       StatusBar.hide();
-
+      
       // Initialize Mixpanel event tracking using relevant token from .gitignore'd json file
       // window.mixpanel is not yet defined on document.ready, so init in onDeviceReady
       $.getJSON('secrets.json', function(data) {        
@@ -91,7 +91,7 @@
 
       FilkoShoutPlayer.initMediaFiles();
       $(".ui-filkotrigger").click(function (event) {
-        FilkoShoutPlayer.playNextFilkoShout();  
+        FilkoShoutPlayer.playNextFilkoShout();
       });
 
       var langToSet = LanguageSwitcher.retrievePreferredLang();
@@ -126,8 +126,30 @@
       $(document).on('collapsiblecollapse', '.ui-collapsible', function() {
         $(this).children().next().slideUp(200);
       });
-
+      
+      // pulse intro title button to hint it's clickable
+      // with added sound effect
+      window.setTimeout(function () {
+        $('#intro-title-button img').pulse();
+        FilkoShoutPlayer.playNextFilkoShout();
+      }, 500);
     };
+
+    jQuery.fn.extend({
+      pulse: function () {
+        $(this)
+          .queue(function(next){
+              $(this).addClass("active");
+              next();
+          })
+          .delay(400)
+          .queue(function(next){
+              $(this).removeClass("active");
+              next();
+          });
+        return this;
+      }
+    });
 
     function createList(sourceFile, listId) {
       $(listId).empty();
@@ -204,11 +226,8 @@
     </div>
 
     <div class="center-wrapper intro-screen ui-filkotrigger">
-      <a href="#track-list-page" data-transition="slideup">
-        <div class="rotated border-top-bottom">
-          <h1 id="filko-title">FILKO</h1>
-          <h2 id="app-description" data-i18n="home-description">AUDIO GUIDE</h2>
-        </div>  
+      <a id="intro-title-button" href="#track-list-page" data-transition="slideup">
+        <img data-i18n="[src]home-title-img-src" src="images/filko-sk.png" alt="filko audio guide">
       </a>
     </div> <!-- /center-wrapper -->
     <div class="footer">
