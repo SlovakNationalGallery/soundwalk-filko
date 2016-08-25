@@ -298,8 +298,7 @@ a.intro-button {
 
 .intro-screen {
   position: absolute;
-  width: 260px;
-  height: 240px;
+  width: 97%;
   top: 48%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -310,27 +309,27 @@ a.intro-button {
   text-decoration: none;
 }
 
-.intro-screen #filko-title {
-  font-family: Tungsten, Impact, Charcoal, sans-serif;
-  font-size: 120px;
-  letter-spacing: 21px;
-  margin: 0 auto;
+#intro-title-button{
+  width: inherit;
 }
 
-.intro-screen #app-description {
-  letter-spacing: 12px;
-  font-size: 20px;
-  margin-right: -10px;
+#intro-title-button img{
+  padding-left: 10px;
+  width: inherit;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;  
 }
 
-.rotated {
-  -webkit-transform: rotate(10deg);
-  transform: rotate(10deg);
-}
-
-.border-top-bottom {  
-  border-top:    1px solid rgba(150, 150, 150, 0.5);
-  border-bottom: 1px solid rgba(150, 150, 150, 0.5);
+#intro-title-button img.active {
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
 }
 
 .languageSwitch {
