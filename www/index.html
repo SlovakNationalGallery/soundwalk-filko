@@ -77,8 +77,6 @@
     function onDeviceReady() {
       StatusBar.hide();
 
-      EventTracker.init("secrets.json");
-
       FilkoShoutPlayer.initMediaFiles();
       $(".ui-filkotrigger").click(function (event) {
         FilkoShoutPlayer.playNextFilkoShout();
@@ -86,6 +84,9 @@
 
       var langToSet = LanguageSwitcher.retrievePreferredLang();
       triggerLanguageUI(langToSet);
+      
+      // Initialise event tracking after language is set
+      EventTracker.init("secrets.json");
 
       if(navigator.userAgent.match(/iP[ha][od].*OS 7/)) { //if ios7
         $('.ui-btn-left, .ui-btn-right ').css('top','.48em');
