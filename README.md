@@ -47,7 +47,8 @@ In case you receive an `Unable to download archive from the server` error in the
 We use [Mixpanel](https://mixpanel.com) to track basic usage of the app. The unique Mixpanel token is stored in `www/secrets.json`, which looks like:
 ```
 {
-    "mixpanelToken":"YOUR_TOKEN_HERE"
+    "mixpanelProductionToken":"YOUR_PRODUCTION_TOKEN_HERE"
+    "mixpanelDevelopmentToken":"YOUR_DEVELOPMENT_TOKEN_HERE"
 }
 ```
 
