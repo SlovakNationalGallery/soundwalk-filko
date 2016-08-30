@@ -19,10 +19,6 @@ var EventTracker = {
 		});	
 	},
 	track: function (event, properties) {
-		if (EventTracker.settings.DISABLED) {
-			return;
-    };
-
     $.extend(properties, {'language': $.i18n().locale});
     
     if (EventTracker.settings.DEBUG) {
@@ -30,6 +26,9 @@ var EventTracker = {
         console.log("event: " + event);
         console.log(properties);
         console.log("/******");
+    };
+    if (EventTracker.settings.DISABLED) {
+			return;
     };
     window.mixpanel.track(event, properties);
 	}

@@ -70,19 +70,38 @@ var Player = {
          );
 
          Player.changePlayButton('pause');
+         
+         EventTracker.track("PlayerEvent", {
+            type: "Play",
+            track: Player.media.src.match(/-(\d\d?)\.mp3/)[1],
+            timecode: Math.round(Player.media._position)
+         });
       }
       else
       {
          Player.media.pause();
          clearInterval(Player.mediaTimer);
          Player.changePlayButton('play');
+
+         EventTracker.track("PlayerEvent", {
+            type: "Pause",
+            track: Player.media.src.match(/-(\d\d?)\.mp3/)[1],
+            timecode: Math.round(Player.media._position)
+         });
       }
       Player.isPlaying = !Player.isPlaying;
    },
    stop: function() {
       if (Player.media !== null)
       {
-         if (Player.isPlaying) { Player.media.stop(); }
+         if (Player.isPlaying) {
+            EventTracker.track("PlayerEvent", {
+               type: "Stop",
+               track: Player.media.src.match(/-(\d\d?)\.mp3/)[1],
+               timecode: Math.round(Player.media._position)
+            })
+            Player.media.stop(); 
+         }
          Player.media.release();
       }
       clearInterval(Player.mediaTimer);
