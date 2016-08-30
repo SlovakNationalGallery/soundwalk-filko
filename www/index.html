@@ -26,6 +26,7 @@
   <script src="js/player.js"></script>
   <script src="js/languageswitcher.js"></script>
   <script src="js/filkoshoutplayer.js"></script>
+  <script src="js/eventtracker.js"></script>
 
   <script type="text/javascript">
 
@@ -75,19 +76,8 @@
 
     function onDeviceReady() {
       StatusBar.hide();
-      
-      // Initialize Mixpanel event tracking using relevant token from .gitignore'd json file
-      // window.mixpanel is not yet defined on document.ready, so init in onDeviceReady
-      $.getJSON('secrets.json', function(data) {        
-        var developmentHost = "192."
-        if (window.location.hostname.toLowerCase().search(developmentHost) < 0) {
-          var mpToken = data.mixpanelProductionToken;
-        } else {
-          var mpToken = data.mixpanelDevelopmentToken;
-        }
-        window.mixpanel.init(mpToken);
-        window.mixpanel.track("appOpened");
-      });
+
+      EventTracker.init("secrets.json");
 
       FilkoShoutPlayer.initMediaFiles();
       $(".ui-filkotrigger").click(function (event) {
