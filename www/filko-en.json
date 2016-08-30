@@ -1,0 +1,66 @@
+[
+   {
+      "audio": "EN-0.mp3",
+      "title": "Cosmos <i>(Atrium)</i>",
+      "order": 0,
+      "bgcolor": "darkblue",
+      "indexcolor": "lightblue",
+      "bgimg": "images/tracks/bg-0.svg"
+   },
+   {
+      "audio": "EN-1.mp3",
+      "title": "Poetry on Space &mdash; Cosmos",
+      "order": 1,
+      "bgcolor": "lightbrown",
+      "indexcolor": "darkbrown",
+      "bgimg": "images/tracks/bg-1.svg"
+   },
+   {
+      "audio": "EN-2.mp3",
+      "title": "Red &mdash; Biology 3.D",
+      "order": 2,
+      "bgcolor": "red",
+      "indexcolor": "red",
+      "bgimg": "images/tracks/bg-2.svg"
+   },
+   {
+      "audio": "EN-3.mp3",
+      "title": "Blue &mdash; Cosmology 4.D #1",
+      "order": 3,
+      "bgcolor": "lightblue",
+      "indexcolor": "darkblue",
+      "bgimg": "images/tracks/bg-3.svg"
+   },
+   {
+      "audio": "EN-4.mp3",
+      "title": "Blue &mdash; Cosmology 4.D #2",
+      "order": 4,
+      "bgcolor": "lightblue",
+      "indexcolor": "darkblue",
+      "bgimg": "images/tracks/bg-4.svg"
+   },
+   {
+      "audio": "EN-5.mp3",
+      "title": "White &mdash; Ontology 5.D",
+      "order": 5,
+      "bgcolor": "grey",
+      "indexcolor": "grey",
+      "bgimg": "images/tracks/bg-5.svg"
+   },
+   {
+      "audio": "EN-6.mp3",
+      "title": "Ego &mdash; SF System",
+      "order": 6,
+      "bgcolor": "black",
+      "indexcolor": "black",
+      "bgimg": "images/tracks/bg-6.svg"
+   },
+   {
+      "audio": "EN-7.mp3",
+      "title": "Dwelling of Contemporaneity",
+      "order": 7,
+      "bgcolor": "gold",
+      "indexcolor": "gold",
+      "bgimg": "images/tracks/bg-7.svg"
+   }
+]
