@@ -28,24 +28,21 @@ var Player = {
                case Media.MEDIA_STARTING:
                   break;
                case Media.MEDIA_RUNNING:
-                  EventTracker.track("PlayerEvent", {
-                     type: "MEDIA_RUNNING",
-                     track: Player.getCurrentTrackNumber(),
-                     timecode: Player.getCurrentTimecode()
+                  EventTracker.track("PlayerPlay", {
+                     type: "PlayerEvent",
+                     media: Player.media
                   });
                   break;
                case Media.MEDIA_PAUSED:
-                  EventTracker.track("PlayerEvent", {
-                     type: "MEDIA_PAUSED",
-                     track: Player.getCurrentTrackNumber(),
-                     timecode: Player.getCurrentTimecode()
+                  EventTracker.track("PlayerPause", {
+                     type: "PlayerEvent",
+                     media: Player.media
                   });
                   break;
                case Media.MEDIA_STOPPED:
-                  EventTracker.track("PlayerEvent", {
-                     type: "MEDIA_STOPPED",
-                     track: Player.getCurrentTrackNumber(),
-                     timecode: Player.getCurrentTimecode()
+                  EventTracker.track("PlayerStop", {
+                     type: "PlayerEvent",
+                     media: Player.media
                   });
                   break;
             }
@@ -144,12 +141,6 @@ var Player = {
 
       Player.media.seekTo(seconds * 1000);
       // Player.updateSliderPosition(seconds); //vypnute kvoli skakaniu
-   },
-   getCurrentTrackNumber: function() {
-      return Player.media.src.match(/-(\d\d?)\.mp3/)[1];
-   },
-   getCurrentTimecode: function () {
-      return Math.round(Player.media._position);
    },
    changePlayButton: function(imageName) {
       $(".player-play span").attr("class","icon-"+imageName);
