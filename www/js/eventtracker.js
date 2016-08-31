@@ -15,9 +15,9 @@ var EventTracker = {
 				var mpToken = data.mixpanelProductionToken;
 			}
 			window.mixpanel.init(mpToken);
-			EventTracker.track_links();
 			// track appOpened once mixpanel has been initialised
-			EventTracker.track("appOpened", {});
+			window.mixpanel.track("appOpened");
+			EventTracker.track_links();
 		});	
 	},
 	track: function (event, properties) {
