@@ -20,6 +20,42 @@ var Player = {
             );
             Player.changePlayButton('play');
             console.log('Unable to read the media file (Code): ' + error.code);
+         },
+         function (statusCode) { // status_changed
+            switch(statusCode) {
+               case Media.MEDIA_NONE:
+                  break;
+               case Media.MEDIA_STARTING:
+                  if (Player.media) {
+                     EventTracker.track("PlayerEvent", {
+                        type: "MEDIA_STARTING",
+                        track: Player.getCurrentTrackNumber(),
+                        timecode: Player.getCurrentTimecode()
+                     });
+                  }
+                  break;
+               case Media.MEDIA_RUNNING:
+                  EventTracker.track("PlayerEvent", {
+                     type: "MEDIA_RUNNING",
+                     track: Player.getCurrentTrackNumber(),
+                     timecode: Player.getCurrentTimecode()
+                  });
+                  break;
+               case Media.MEDIA_PAUSED:
+                  EventTracker.track("PlayerEvent", {
+                     type: "MEDIA_PAUSED",
+                     track: Player.getCurrentTrackNumber(),
+                     timecode: Player.getCurrentTimecode()
+                  });
+                  break;
+               case Media.MEDIA_STOPPED:
+                  EventTracker.track("PlayerEvent", {
+                     type: "MEDIA_STOPPED",
+                     track: Player.getCurrentTrackNumber(),
+                     timecode: Player.getCurrentTimecode()
+                  });
+                  break;
+            }
          }
       );
    },
@@ -70,24 +106,12 @@ var Player = {
          );
 
          Player.changePlayButton('pause');
-         
-         EventTracker.track("PlayerEvent", {
-            type: "Play",
-            track: Player.media.src.match(/-(\d\d?)\.mp3/)[1],
-            timecode: Math.round(Player.media._position)
-         });
       }
       else
       {
          Player.media.pause();
          clearInterval(Player.mediaTimer);
          Player.changePlayButton('play');
-
-         EventTracker.track("PlayerEvent", {
-            type: "Pause",
-            track: Player.media.src.match(/-(\d\d?)\.mp3/)[1],
-            timecode: Math.round(Player.media._position)
-         });
       }
       Player.isPlaying = !Player.isPlaying;
    },
@@ -95,11 +119,6 @@ var Player = {
       if (Player.media !== null)
       {
          if (Player.isPlaying) {
-            EventTracker.track("PlayerEvent", {
-               type: "Stop",
-               track: Player.media.src.match(/-(\d\d?)\.mp3/)[1],
-               timecode: Math.round(Player.media._position)
-            })
             Player.media.stop(); 
          }
          Player.media.release();
@@ -132,6 +151,12 @@ var Player = {
 
       Player.media.seekTo(seconds * 1000);
       // Player.updateSliderPosition(seconds); //vypnute kvoli skakaniu
+   },
+   getCurrentTrackNumber: function() {
+      return Player.media.src.match(/-(\d\d?)\.mp3/)[1];
+   },
+   getCurrentTimecode: function () {
+      return Math.round(Player.media._position);
    },
    changePlayButton: function(imageName) {
       $(".player-play span").attr("class","icon-"+imageName);
