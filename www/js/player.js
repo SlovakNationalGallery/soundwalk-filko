@@ -26,13 +26,6 @@ var Player = {
                case Media.MEDIA_NONE:
                   break;
                case Media.MEDIA_STARTING:
-                  if (Player.media) {
-                     EventTracker.track("PlayerEvent", {
-                        type: "MEDIA_STARTING",
-                        track: Player.getCurrentTrackNumber(),
-                        timecode: Player.getCurrentTimecode()
-                     });
-                  }
                   break;
                case Media.MEDIA_RUNNING:
                   EventTracker.track("PlayerEvent", {
