@@ -1,6 +1,6 @@
 var EventTracker = {
 	settings: {
-		DEBUG: true,
+		DEBUG: false,
 		DISABLED: false,
 		trackedLinksQuery: "a.track"
 	},
