@@ -60,3 +60,11 @@ To generate splash-screens for all platforms (after platforms have been added):
 ```
 cordova-splash
 ```
+
+## Troubleshooting
+
+### iOS crash on start
+
+When crashes occur on startup (we encountered this on iOS8/iPhone5), this might be caused by an unincluded framework used by Mixpanel.
+
+To solve it, open app in XCode -> General tab -> Linked Frameworks and Libraries -> Add *Watchkit.framework*
