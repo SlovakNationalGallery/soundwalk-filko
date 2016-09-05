@@ -78,16 +78,16 @@ var EventTracker = {
 			return properties;
 		});
 	},
-	track_progress(position, media){
+	track_progress: function (position, media) {
 		var trackNumber   = media.src.match(/-(\d\d?)\.mp3/)[1];
-        var trackDuration = media.getDuration();
+		var trackDuration = media.getDuration();
 		var ratio = position / trackDuration;
 		if (ratio >= 0.5) {
 			if (typeof EventTracker.tracksTracked[trackNumber][0.5] === "undefined") {
 				EventTracker.track("PlayerPlayedTrough", {
-				   "type": "PlayerEvent",
-				   "part": 0.5,
-				   "media": media
+					"type": "PlayerEvent",
+					"part": 0.5,
+					"media": media
 				})
 				EventTracker.tracksTracked[trackNumber][0.5] = true;
 			}
