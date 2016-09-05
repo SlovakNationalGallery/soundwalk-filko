@@ -64,6 +64,7 @@ var Player = {
                      {
                         $('.media-played').text(Utility.formatTime(position));
                         Player.updateSliderPosition(position);
+                        EventTracker.track_progress(position, Player.media);
                      }
                   },
                   function(error) {

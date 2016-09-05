@@ -2,6 +2,7 @@ var EventTracker = {
 	settings: {
 		DEBUG: false,
 		DISABLED: false,
+		TRACK_NUMBERS: ["0","1","2","3","4","5","6","7"],
 		trackedLinksQuery: "a.track"
 	},
 	init: function (secretsPath) {
@@ -21,6 +22,13 @@ var EventTracker = {
 			EventTracker.track_links();
 			}
 		});	
+		EventTracker.init_tracks_tracked(EventTracker.settings.TRACK_NUMBERS);
+	},
+	init_tracks_tracked: function (trackNumbers) {
+		EventTracker.tracksTracked = {};
+		for (var i = 0; i < trackNumbers.length; i++) {
+			EventTracker.tracksTracked[trackNumbers[i]] = {};
+		}
 	},
 	track: function (event, properties) {
 		$.extend(properties, {'language': $.i18n().locale});
@@ -69,5 +77,22 @@ var EventTracker = {
 			}
 			return properties;
 		});
+	},
+	track_progress(position, media){
+		console.log(position);
+		var trackNumber   = media.src.match(/-(\d\d?)\.mp3/)[1];
+        var trackDuration = media.getDuration();
+		var ratio = position / trackDuration;
+		if (ratio >= 0.5) {
+			if (typeof EventTracker.tracksTracked[trackNumber][0.5] === "undefined") {
+				console.log("track halfway!!!");
+				EventTracker.track("PlayerPlayedTrough", {
+				   "type": "PlayerEvent",
+				   "part": 0.5,
+				   "media": media
+				})
+				EventTracker.tracksTracked[trackNumber][0.5] = true;
+			}
+		}
 	}
 }
