@@ -38,7 +38,7 @@ var EventTracker = {
 				}
 				
 				var completionBuffer = 2; // seconds before end from which MEDIA_STOPPED will be counted as completion
-				if (properties.media._position >= properties.media._duration - completionBuffer) {
+				if (properties.media._position >= properties.media.getDuration() - completionBuffer) {
 					$.extend(properties, {'completed': true});
 				} else {
 					$.extend(properties, {'completed': false});
