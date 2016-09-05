@@ -14,10 +14,12 @@ var EventTracker = {
 			} else {
 				var mpToken = data.mixpanelProductionToken;
 			}
+			if (!EventTracker.settings.DISABLED) {
 			window.mixpanel.init(mpToken);
 			// track appOpened once mixpanel has been initialised
 			window.mixpanel.track("appOpened");
 			EventTracker.track_links();
+			}
 		});	
 	},
 	track: function (event, properties) {
