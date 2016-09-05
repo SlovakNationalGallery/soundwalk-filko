@@ -84,7 +84,6 @@ var EventTracker = {
 		var ratio = position / trackDuration;
 		if (ratio >= 0.5) {
 			if (typeof EventTracker.tracksTracked[trackNumber][0.5] === "undefined") {
-				console.log("track halfway!!!");
 				EventTracker.track("PlayerPlayedTrough", {
 				   "type": "PlayerEvent",
 				   "part": 0.5,
