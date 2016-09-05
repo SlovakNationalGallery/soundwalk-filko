@@ -79,7 +79,6 @@ var EventTracker = {
 		});
 	},
 	track_progress(position, media){
-		console.log(position);
 		var trackNumber   = media.src.match(/-(\d\d?)\.mp3/)[1];
         var trackDuration = media.getDuration();
 		var ratio = position / trackDuration;
