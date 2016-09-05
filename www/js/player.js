@@ -20,6 +20,32 @@ var Player = {
             );
             Player.changePlayButton('play');
             console.log('Unable to read the media file (Code): ' + error.code);
+         },
+         function (statusCode) { // status_changed
+            switch(statusCode) {
+               case Media.MEDIA_NONE:
+                  break;
+               case Media.MEDIA_STARTING:
+                  break;
+               case Media.MEDIA_RUNNING:
+                  EventTracker.track("PlayerPlay", {
+                     type: "PlayerEvent",
+                     media: Player.media
+                  });
+                  break;
+               case Media.MEDIA_PAUSED:
+                  EventTracker.track("PlayerPause", {
+                     type: "PlayerEvent",
+                     media: Player.media
+                  });
+                  break;
+               case Media.MEDIA_STOPPED:
+                  EventTracker.track("PlayerStop", {
+                     type: "PlayerEvent",
+                     media: Player.media
+                  });
+                  break;
+            }
          }
       );
    },
@@ -38,6 +64,7 @@ var Player = {
                      {
                         $('.media-played').text(Utility.formatTime(position));
                         Player.updateSliderPosition(position);
+                        EventTracker.track_progress(position, Player.media);
                      }
                   },
                   function(error) {
@@ -82,7 +109,9 @@ var Player = {
    stop: function() {
       if (Player.media !== null)
       {
-         if (Player.isPlaying) { Player.media.stop(); }
+         if (Player.isPlaying) {
+            Player.media.stop(); 
+         }
          Player.media.release();
       }
       clearInterval(Player.mediaTimer);
