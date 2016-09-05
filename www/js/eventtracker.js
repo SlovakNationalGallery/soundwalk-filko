@@ -1,6 +1,6 @@
 var EventTracker = {
 	settings: {
-		DEBUG: true,
+		DEBUG: false,
 		DISABLED: false,
 		TRACK_NUMBERS: ["0","1","2","3","4","5","6","7"],
 		PROGRESS_PARTS: [0.25, 0.5, 0.75],
