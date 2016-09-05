@@ -1,8 +1,9 @@
 var EventTracker = {
 	settings: {
-		DEBUG: false,
+		DEBUG: true,
 		DISABLED: false,
 		TRACK_NUMBERS: ["0","1","2","3","4","5","6","7"],
+		PROGRESS_PARTS: [0.25, 0.5, 0.75],
 		trackedLinksQuery: "a.track"
 	},
 	init: function (secretsPath) {
@@ -16,12 +17,12 @@ var EventTracker = {
 				var mpToken = data.mixpanelProductionToken;
 			}
 			if (!EventTracker.settings.DISABLED) {
-			window.mixpanel.init(mpToken);
-			// track appOpened once mixpanel has been initialised
-			window.mixpanel.track("appOpened");
-			EventTracker.track_links();
+				window.mixpanel.init(mpToken);
+				// track appOpened once mixpanel has been initialised
+				window.mixpanel.track("appOpened");
+				EventTracker.track_links();
 			}
-		});	
+		});
 		EventTracker.init_tracks_tracked(EventTracker.settings.TRACK_NUMBERS);
 	},
 	init_tracks_tracked: function (trackNumbers) {
@@ -82,14 +83,17 @@ var EventTracker = {
 		var trackNumber   = media.src.match(/-(\d\d?)\.mp3/)[1];
 		var trackDuration = media.getDuration();
 		var ratio = position / trackDuration;
-		if (ratio >= 0.5) {
-			if (typeof EventTracker.tracksTracked[trackNumber][0.5] === "undefined") {
-				EventTracker.track("PlayerPlayedTrough", {
-					"type": "PlayerEvent",
-					"part": 0.5,
-					"media": media
-				})
-				EventTracker.tracksTracked[trackNumber][0.5] = true;
+		for (var i = 0; i < EventTracker.settings.PROGRESS_PARTS.length; i++) {
+			var part = EventTracker.settings.PROGRESS_PARTS[i];
+			if (ratio >= part) {
+				if (typeof EventTracker.tracksTracked[trackNumber][part] === "undefined") {
+					EventTracker.track("PlayerPlayedTrough", {
+					   "type": "PlayerEvent",
+					   "part": part,
+					   "media": media
+					})
+					EventTracker.tracksTracked[trackNumber][part] = true;
+				}
 			}
 		}
 	}
