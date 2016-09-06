@@ -1,6 +1,6 @@
 {
 	"en" : {
-		"home-title-img-src": "images/filko-en.png",
+		"home-title-img-src": "images/filko-en.svg",
 		"ui-back": "Back",
 		"credits-title-credits": "STANO FILKO: POETRY ON SPACE – COSMOS",
 		"credits-title-exhibition": "Exhibition",
@@ -9,7 +9,7 @@
 		"credits-label-projectass": "Project assistant",
 		"credits-label-curatorass": "Curatorial assistant",
 		"credits-label-visuals": "Visuals",
-		"credits-p-departments": "The mobile app was developed by <a href='http://lab.sng.sk/' class='external'>lab.SNG</a>. Content was created by the&nbsp;Department of&nbsp;Education SNG in collaboration with the curators of the exhibition.",
+		"credits-p-departments": "The mobile app was developed by <a href='http://lab.sng.sk/' class='external track'>lab.SNG</a>. Content was created by the&nbsp;Department of&nbsp;Education SNG in collaboration with the curators of the exhibition.",
 		"credits-label-development": "Development",
 		"credits-label-graphicdesign": "Graphic design",
 		"credits-label-script": "Script",
@@ -17,7 +17,7 @@
 		"credits-label-voice-en": "Voice Actor (EN)",
 		"credits-label-soundrecording": "Sound Recording",
 		"credits-label-assistance": "Assistance",
-		"credits-p-opensource": "Source code is available at <a href='https://github.com/SlovakNationalGallery/'>github.com/SlovakNationalGallery</a>",
+		"credits-p-opensource": "Source code is available at <a href='https://github.com/SlovakNationalGallery/' class='external track'>github.com/SlovakNationalGallery</a>",
 		"info-link-map": "view map",
 		"info-link-call": "call",
 		"info-title-visit": "Visit us",
@@ -31,7 +31,7 @@
 		"info-section-about": "<p>Stano Filko was an intermedia and conceptual artist, who caused an upheaval in a relatively conservative cultural environment in Slovakia in the mid 1960s. He followed the trends and art fields forming at that time around the world - environment, spatial installation art, land (earth)-art, conceptual art, new media art, video art - and reflected them in his own original way. Filko progressed in several directions simultaneously, while incorporating a wide register of themes and inspirations. Closest to his heart were the most universal and abstract themes and phenomena - those which resisted materialisation, such as infinite time and space or immaterial existence.</p><p>All works by Stano Filko are part of one system and universe. He collected and organised ideas, concepts, knowledge, symbols and facts into structures, according to the basic colours of 'System SF' - red, blue, white – and later the symbols of the three dimensions (3rd, 4th, 5th) along with the black color of EGO. The multi-media exhibition Poézia o priestore – kozme / Poetry on Space – Cosmos represents Filko’s work and thinking in the 1960s and 1970s, extended by newer work and layers of artistic interventions. More than 150 artworks will be presented at the exhibition (over a third of these works were never exhibited before) - sculptures, objects, environments, sound-art, film, installations of the artist’s slides and two archive binders containing approximately 120 works.</p>"
 	},
 	"sk" : {
-		"home-title-img-src": "images/filko-sk.png",
+		"home-title-img-src": "images/filko-sk.svg",
 		"ui-back": "Späť",
 		"credits-title-credits": "STANO FILKO: POÉZIA O PRIESTORE – KOZME",
 		"credits-title-exhibition": "Výstava",
@@ -40,7 +40,7 @@
 		"credits-label-projectass": "Asistent projektu",
 		"credits-label-curatorass": "Kurátorská spolupráca",
 		"credits-label-visuals": "Vizuál",
-		"credits-p-departments": "Aplikácia bola vyvinutá v <a href='http://lab.sng.sk/' class='external'>lab.SNG</a>, obsah pripravilo Oddelenie galerijnej pedagogiky SNG v spolupráci s&nbsp;kurátormi výstavy.",
+		"credits-p-departments": "Aplikácia bola vyvinutá v <a href='http://lab.sng.sk/' class='external track'>lab.SNG</a>, obsah pripravilo Oddelenie galerijnej pedagogiky SNG v spolupráci s&nbsp;kurátormi výstavy.",
 		"credits-label-development": "Vývoj",
 		"credits-label-graphicdesign": "Grafický dizajn",
 		"credits-label-script": "Texty/Scenár",
@@ -48,7 +48,7 @@
 		"credits-label-voice-en": "Hlas (EN)",
 		"credits-label-soundrecording": "Zvuk",
 		"credits-label-assistance": "Spolupráca",
-		"credits-p-opensource": "Zdrojový kód je dostupný na <a href='https://github.com/SlovakNationalGallery/'>github.com/SlovakNationalGallery</a>",
+		"credits-p-opensource": "Zdrojový kód je dostupný na <a href='https://github.com/SlovakNationalGallery/' class='external track'>github.com/SlovakNationalGallery</a>",
 		"info-link-map": "zobraziť mapu",
 		"info-link-call": "zavolať",
 		"info-title-visit": "Navštívte nás",
