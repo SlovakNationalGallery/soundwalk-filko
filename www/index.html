@@ -112,6 +112,9 @@
         $(this).children().next().slideDown(200);
         $(".slider").slider('refresh');
         initPlayer($(this));
+        // sometimes (e.g. after long press) collapsed tracks get stuck in .ui-btn-active state
+        // solve this by removing ui-btn-active states from any tracks on 'collapsibleexpand'
+        $("a.ui-collapsible-heading-toggle.ui-btn-active").removeClass("ui-btn-active");
       })
 
       $(document).on('collapsiblecollapse', '.ui-collapsible', function() {
