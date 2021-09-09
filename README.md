@@ -2,6 +2,8 @@ Filko Audio Guide
 =================
 
 ![image](filko.png)
+![_GAL0555](https://user-images.githubusercontent.com/7370972/132679826-ad92a74a-daf9-47b3-9e4c-71f413257c32.jpg)
+
 
 This Audio Guide accompanies the ['STANO FILKO: POETRY ON SPACE – COSMOS'](http://www.sng.sk/en/exhibitions/729_stano-filko-poetry-on-space-cosmos) exhibition at the Slovak National Gallery, 24 June - 25 September 2016.
 It is an open source mobile application built using PhoneGap (Apache Cordova), written entirely in HTML, CSS and JavaScript, and runs on numerous platforms (tested for iOS and Android).
